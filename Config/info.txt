@@ -1,0 +1,6 @@
+Este directorio se usara para el almacenamiento de archivos de configuracion de las diferentes herramientas que se utilicen.
+
+
+Apache
+BD
+Jenkins

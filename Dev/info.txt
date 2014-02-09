@@ -1,0 +1,3 @@
+Este directorio sera utilizado para el almacenamiento de todo lo que tenga que ver con el desarrollo del proyecto, su codigo y modulos.
+
+djangoProyect

@@ -1,0 +1,47 @@
+body{
+	background-color: #777;
+}
+
+footer {
+	position: absolute;
+	background-color: #888;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	width: 100%;
+	height: 45px;
+}
+
+nav {
+	position: absolute;
+	width: 400px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
+	height: 25px;
+}
+
+.boton {
+	display: inline-block;
+	color: #fff;
+	width: 33%;
+}
+
+#login_form {
+	position: absolute;
+	background-color: #999;
+	height: 100px;
+	width: 300px;
+	top:400px;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+}
+
+.txt {
+	background-color: #fff;
+	height: 25px;
+	width: 85px;
+
+}

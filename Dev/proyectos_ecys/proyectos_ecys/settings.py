@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login',
+    'sistema_pe',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,8 +58,12 @@ WSGI_APPLICATION = 'proyectos_ecys.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'proyectos_ecys_db',
+        'USER': 'AyD2',
+        'HOST': 'localhost'
     }
 }
 

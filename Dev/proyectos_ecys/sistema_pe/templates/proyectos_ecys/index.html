@@ -9,20 +9,20 @@
 <body>
 
 	<header>
-		
+		{% if aceptado %}
+		<h3>el usuario no pudo logearse: {{ usuario }}</h3>
+		{% endif %}
+
 	</header>
 
 	<div id="login_form">
 		<div>
 			<form action="/login/" method="POST">
-				<input type="text">
-				<input type="text">
+				{% csrf_token %}
+				<input type="text" name="usrNombre">
+				<input type="text" name="usrClave">
 				<input type="submit" value="Aceptar">
 			</form>
-			<!--Nombre:
-			<div id="nombre" class="txt"></div>
-			Clave:
-			<div id="clave" class="txt"></div>-->
 		</div>
 	</div>
 

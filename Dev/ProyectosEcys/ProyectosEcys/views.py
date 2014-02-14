@@ -8,4 +8,4 @@ from django.template import RequestContext
 def home(request):
     c = {}
     c.update(csrf(request))
-    return render_to_response('proyectos_ecys/index.html', c)
+    return render_to_response('proyectosEcys/index.html', c)

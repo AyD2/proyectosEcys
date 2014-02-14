@@ -1,4 +1,5 @@
-from django.test import TestCase
+
+m django.test import TestCase
 from sistema_pe.models import Usuario
 from hashlib import sha512
 from sistema_pe import login
@@ -18,9 +19,9 @@ class Unittest_Login(TestCase):
         us = Usuario.objects.get(nombre='usuario')
         us2 = Usuario.objects.get(nombre='usuario2')
         self.assertEquals(login.login('usuario', 'clave'),True
-                                        , "Si loguea satisfactoriamente")
+                                    , "Si loguea satisfactoriamente")
         self.assertEquals(login.login('usuario2', 'clave'), False
-                                        , "Si evita los loguins incorrectos")
+                                     , "Si evita los loguins incorrectos")
 
     def test_login_db(self):
         self.preparar()
@@ -28,3 +29,4 @@ class Unittest_Login(TestCase):
         usVerdadero = login.obtener_usuario('usuario')
         self.assertIsNone(usFalso)
         self.assertIsNotNone(usVerdadero)
+                                                                                                                                            

@@ -51,9 +51,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'proyectos_ecys.urls'
+ROOT_URLCONF = 'ProyectosEcys.urls'
 
-WSGI_APPLICATION = 'proyectos_ecys.wsgi.application'
+WSGI_APPLICATION = 'ProyectosEcys.wsgi.application'
 
 
 # Database

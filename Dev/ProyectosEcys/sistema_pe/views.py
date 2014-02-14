@@ -15,7 +15,7 @@ def index(request):
         else: 
             print "no se pudo logear"
             contexto = {'usuario': nombre, 'clave': clave, 'aceptado': True}
-            return render(request, 'proyectos_ecys/index.html', {'usuario': nombre, 'clave': clave, 'aceptado': True})
+            return render(request, 'proyectosEcys/index.html', {'usuario': nombre, 'clave': clave, 'aceptado': True})
 
 
 def login(request):

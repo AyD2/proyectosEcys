@@ -28,7 +28,7 @@ cp -rv ProyectosEcys /var/www/dev.proyectos-ecys.tk/
 
 echo "Changing Onwer to www-data"
 chmod -R 775 /var/www/dev.proyectos-ecys.tk
-chown -R www-data /var/www/dev.proyectos-ecys.tk
+#chown -R www-data /var/www/dev.proyectos-ecys.tk
 
 echo "End Build Script $(date)"
 

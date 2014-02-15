@@ -23,11 +23,13 @@ echo "Star Jenkins+Django Test"
 
 
 echo "Copy Proyect to Dev Envioroment"
-cp -rv Conf /var/www/dev.proyectos-ecys.tk/
-cp -rv ProyectosEcys /var/www/dev.proyectos-ecys.tk/
+echo "Changing to www-data"
+sudo /bin/su - www-data -c /bin/bash
+cp -rv "$base/../Dev/Conf" /var/www/dev.proyectos-ecys.tk/
+cp -rv "$base/../Dev/ProyectosEcys" /var/www/dev.proyectos-ecys.tk/
 
-echo "Changing Onwer to www-data"
-chmod -R 775 /var/www/dev.proyectos-ecys.tk
+#echo "Changing Onwer to www-data"
+#chmod -R 775 /var/www/dev.proyectos-ecys.tk
 #chown -R www-data /var/www/dev.proyectos-ecys.tk
 
 echo "End Build Script $(date)"

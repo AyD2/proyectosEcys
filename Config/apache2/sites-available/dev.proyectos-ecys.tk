@@ -1,53 +1,51 @@
 <VirtualHost *:80>
 
-	ServerAdmin webmaster@localhost
-	ServerName dev.proyectos-ecys.tk
-	ServerAlias www.dev.proyectos-ecys.tk
-	DocumentRoot /var/www/dev.proyectos-ecys.tk/ProyectosEcys
+        ServerAdmin webmaster@localhost
+        ServerName dev.proyectos-ecys.tk
+        ServerAlias www.dev.proyectos-ecys.tk
+        DocumentRoot /var/www/dev.proyectos-ecys.tk/ProyectosEcys
 
-	<Directory /var/www/dev.proyectos-ecys.tk>
-    		Order allow,deny
-    		Allow from all
-	</Directory>
+        <Directory /var/www/dev.proyectos-ecys.tk>
+                Order allow,deny
+                Allow from all
+        </Directory>
 
-	WSGIDaemonProcess ProyectosEcys processes=2 threads=15 display-name=%{GROUP}
-	WSGIProcessGroup ProyectosEcys
+        WSGIDaemonProcess ProyectosEcys processes=2 threads=15 display-name=%{GROUP}
+        WSGIProcessGroup ProyectosEcys
+        WSGIScriptAlias / /var/www/dev.proyectos-ecys.tk/ProyectosEcys/apache/django.wsgi
 
-	WSGIScriptAlias / /var/www/dev.proyectos-ecys.tk/ProyectosEcys/apache/django.wsgi
+#       Alias /robots.txt /path/to/mysite.com/static/robots.txt
+#       Alias /favicon.ico /path/to/mysite.com/static/favicon.ico
 
+#       AliasMatch ^/([^/]*\.css) /path/to/mysite.com/static/styles/$1
 
+#       Alias /media/ /path/to/mysite.com/media/
+        Alias /static/ /var/www/dev.proyectos-ecys.tk/static/
 
+        <Directory /var/www/dev.proyectos-ecys.tk/static>
+                Order deny,allow
+                Allow from all
+        </Directory>
 
-#	WSGIScriptAlias / /var/www/dev.proyectos-ecys.tk/html.wsgi
+#       <Directory /var/www/dev.proyectos-ecys.tk/media>
+#               Order deny,allow
+#               Allow from all
+#       </Directory>
 
+#       WSGIScriptAlias / /var/www/dev.proyectos-ecys.tk/wsgi.py
 
-#        WSGIProcessGroup html
-#        WSGIDaemonProcess html processes=2 threads=16 maximum-requests=1000 display-name=apache-hello-wsgi
+#       <Directory /var/www/dev.proyectos-ecys.tk/ProyectosEcys>
+#               <Files wsgi.py>
+#               Order allow,deny
+#               Allow from all
+#               </Files>
+#       </Directory>
 
-#	<Directory />
-#		Options FollowSymLinks
-#		AllowOverride None
-#	</Directory>
-#	<Directory /var/www/>
-#		Options Indexes FollowSymLinks MultiViews
-#		AllowOverride None
-#		Order allow,deny
-#		allow from all
-#	</Directory>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
 
-#	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
-#	<Directory "/usr/lib/cgi-bin">
-#		AllowOverride None
-#		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
-#		Order allow,deny
-#		Allow from all
-#	</Directory>
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
 
-	ErrorLog ${APACHE_LOG_DIR}/error.log
-
-	# Possible values include: debug, info, notice, warn, error, crit,
-	# alert, emerg.
-	LogLevel warn
-
-#	CustomLog ${APACHE_LOG_DIR}/access.log combined
+#       CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>

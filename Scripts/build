@@ -1,11 +1,24 @@
 #!/bin/bash
 #
-echo "Inicia Build $(date)"
-echo "Inicia Cambio de Directorio"
-cd ..
-cd Dev
-echo "estoy en $(pwd)" 
-virtualenv env --python=python
-env/bin/pip install -r requirements.pip
+echo "Start Build Script  $(date)"
+#
+script="$(readlink -f ${BASH_SOURCE[0]})"
+base="$(dirname $script)"
+echo "Script Name : $script"
+echo "Current working dir : $PWD"
+echo "Script location path (dir) : $base"
+#
+echo "Changing to Django Directory"
+cd "$base/../Dev"
+#
+echo "Creating Virtual Enviroment"
+#virtualenv env --python=python
+#env/bin/pip install -r requeriments.pip
 #env/bin/python manage.py jenkins
-echo "Termina Build $(date)"
+
+echo "Star Jenkins+Django Test"
+python ProyectosEcys/manage.py jenkins
+
+#env/bin/python manage.py jenkins
+echo "End Build Script $(date)"
+

@@ -73,9 +73,9 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':  'proyectos_ecys_db',
-        'USER':  'tom',
+        'USER':  'AyD2',
         'HOST':  'localhost',
-        'PASSWORD': 'tom'
+        'PASSWORD': 'AyD2'
     }
     #'
     #'test_database':{

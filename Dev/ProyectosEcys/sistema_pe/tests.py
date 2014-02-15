@@ -1,5 +1,5 @@
 
-m django.test import TestCase
+from django.test import TestCase
 from sistema_pe.models import Usuario
 from hashlib import sha512
 from sistema_pe import login

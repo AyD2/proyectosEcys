@@ -65,7 +65,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':  conf.readline().strip(),
         'USER':  conf.readline().strip(),
-        'HOST':  conf.readline().strip()  
+        'HOST':  conf.readline().strip(),
+	'PASSWORD': conf.readline().strip()  
     }
     #'test_database':{
     #   'ENGINE': 'django.db.backends.postgresql_psycopg2',

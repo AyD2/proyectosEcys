@@ -17,7 +17,7 @@ echo "Creating Virtual Enviroment"
 #env/bin/python manage.py jenkins
 
 echo "Star Jenkins+Django Test"
-python Dev/ProyectosEcys/manage.py jenkins sistema_pe
+python ProyectosEcys/manage.py jenkins sistema_pe
 
 #env/bin/python manage.py jenkins
 

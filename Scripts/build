@@ -11,6 +11,7 @@ echo "Script location path (dir) : $base"
 echo "Changing to Django Directory"
 rm -rf reports
 cd "$base/../Dev"
+rm -rf reports
 #
 echo "Creating Virtual Enviroment"
 #virtualenv env --python=python

@@ -9,16 +9,13 @@ echo "Current working dir : $PWD"
 echo "Script location path (dir) : $base"
 #
 echo "Changing to Django Directory"
-rm -rf reports
 cd "$base/../Dev"
-rm -rf reports
 #
 echo "Creating Virtual Enviroment"
 #virtualenv env --python=python
 #env/bin/pip install -r requeriments.pip
 #env/bin/python manage.py jenkins
 echo "Star Jenkins+Django Test"
-touch junit.xml
 python ProyectosEcys/manage.py jenkins sistema_pe
 
 #env/bin/python manage.py jenkins

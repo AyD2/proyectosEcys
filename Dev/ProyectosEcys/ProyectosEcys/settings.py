@@ -13,7 +13,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 #toma el directorio de configuracion para el deploy en diferentes ambientes.
-conf = open('../Conf/db.conf', 'r')
+#conf = open('../Conf/db.conf', 'r')
 
 
 # Quick-start development settings - unsuitable for production
@@ -59,15 +59,25 @@ WSGI_APPLICATION = 'ProyectosEcys.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 DATABASES = {
+#    'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME':  conf.readline().strip(),
+#        'USER':  conf.readline().strip(),
+#        'HOST':  conf.readline().strip(),
+#	'PASSWORD': conf.readline().strip()  
+#    }
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':  conf.readline().strip(),
-        'USER':  conf.readline().strip(),
-        'HOST':  conf.readline().strip(),
-	'PASSWORD': conf.readline().strip()  
+        'NAME':  'proyectos_ecys_db',
+        'USER':  'tom',
+        'HOST':  'localhost',
+        'PASSWORD': 'tom'
     }
+    #'
     #'test_database':{
     #   'ENGINE': 'django.db.backends.postgresql_psycopg2',
       #  'NAME': 'proyectos_ecys_pdb',

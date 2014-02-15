@@ -17,7 +17,7 @@ echo "Creating Virtual Enviroment"
 #env/bin/python manage.py jenkins
 
 echo "Star Jenkins+Django Test"
-#python ProyectosEcys/manage.py jenkins
+python Dev/ProyectosEcys/manage.py jenkins sistema_pe
 
 #env/bin/python manage.py jenkins
 
@@ -29,6 +29,10 @@ sudo -u www-data cp -rv ProyectosEcys /var/www/dev.proyectos-ecys.tk/
 echo "Moving Static Files"
 sudo -u www-data rm -rf /var/www/dev.proyectos-ecys.tk/static
 sudo -u www-data cp -rv /var/www/dev.proyectos-ecys.tk/ProyectosEcys/sistema_pe/static /var/www/dev.proyectos-ecys.tk/
+echo "Syncing DB"
+sudo -u www-data python /var/www/dev.proyectos-ecys.tk/ProyectosEcys/manage.py syncdb
+echo "Starting Unit TEst"
+
 #echo "Changing Onwer to www-data"
 #chmod -R 775 /var/www/dev.proyectos-ecys.tk
 #chown -R www-data /var/www/dev.proyectos-ecys.tk

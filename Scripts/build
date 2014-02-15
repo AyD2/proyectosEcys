@@ -18,6 +18,7 @@ echo "Creating Virtual Enviroment"
 #env/bin/pip install -r requeriments.pip
 #env/bin/python manage.py jenkins
 echo "Star Jenkins+Django Test"
+touch junit.xml
 python ProyectosEcys/manage.py jenkins sistema_pe
 
 #env/bin/python manage.py jenkins

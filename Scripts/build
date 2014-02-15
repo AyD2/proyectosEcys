@@ -17,7 +17,7 @@ echo "Creating Virtual Enviroment"
 #env/bin/python manage.py jenkins
 
 echo "Star Jenkins+Django Test"
-python ProyectosEcys/manage.py jenkins
+#python ProyectosEcys/manage.py jenkins
 
 #env/bin/python manage.py jenkins
 echo "End Build Script $(date)"

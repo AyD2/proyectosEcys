@@ -27,6 +27,7 @@ echo "Changing to www-data"
 sudo -u www-data cp -rv Conf /var/www/dev.proyectos-ecys.tk/
 sudo -u www-data cp -rv ProyectosEcys /var/www/dev.proyectos-ecys.tk/
 echo "Moving Static Files"
+sudo -u www-data rm -rf /var/var/www/dev.proyectos-ecys.tk/static
 sudo -u www-data mv  /var/www/dev.proyectos-ecys.tk/ProyectosEcys/sistema_pe/static /var/www/dev.proyectos-ecys.tk/
 #echo "Changing Onwer to www-data"
 #chmod -R 775 /var/www/dev.proyectos-ecys.tk

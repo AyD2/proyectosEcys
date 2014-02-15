@@ -20,5 +20,11 @@ echo "Star Jenkins+Django Test"
 #python ProyectosEcys/manage.py jenkins
 
 #env/bin/python manage.py jenkins
+
+
+echo "Copy Proyect to Dev Envioroment"
+cp -rv Conf /var/www/dev.proyectos-ecys.tk/
+cp -rv ProyectosEcys /var/www/dev.proyectos-ecys.tk/
+
 echo "End Build Script $(date)"
 

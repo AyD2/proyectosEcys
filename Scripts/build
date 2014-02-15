@@ -26,5 +26,9 @@ echo "Copy Proyect to Dev Envioroment"
 cp -rv Conf /var/www/dev.proyectos-ecys.tk/
 cp -rv ProyectosEcys /var/www/dev.proyectos-ecys.tk/
 
+echo "Changing Onwer to www-data"
+chown -R www-data /var/www/dev.proyectos-ecys.tk
+chmod -R 775 /var/www/dev.proyectos-ecys.tk
+
 echo "End Build Script $(date)"
 

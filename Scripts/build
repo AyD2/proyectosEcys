@@ -1,3 +1,11 @@
 #!/bin/bash
 #
-echo "Hola" 
+echo "Inicia Build $(date)"
+echo "Inicia Cambio de Directorio"
+cd ..
+cd Dev
+echo "estoy en $(pwd)" 
+virtualenv env --python=python
+env/bin/pip install -r requirements.pip
+#env/bin/python manage.py jenkins
+echo "Termina Build $(date)"

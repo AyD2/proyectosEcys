@@ -5,7 +5,7 @@ def login(nombre, clave):
     try:
         us = Usuario.objects.get(nombre=nombre)
         if us.clave == sha512(clave).hexdigest():
-            return False
+            return True
 #x
         else:
             return False

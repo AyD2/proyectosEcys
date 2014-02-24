@@ -1,0 +1,97 @@
+body{
+	background-color: #000;
+}
+
+footer {
+	position: absolute;
+	background-color: #222;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	width: 100%;
+	height: 45px;
+}
+
+nav {
+	position: absolute;
+	width: 400px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
+	height: 25px;
+}
+
+.boton {
+	display: inline-block;
+	color: #fff;
+	width: 33%;
+}
+
+#login_form {
+	position: absolute;
+	height: 100px;
+	width: 500px;
+	top:500px;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+}
+
+.txtInput {
+	background-color: #fff;
+	border: 1px solid #848484;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	height: 30px;
+	width: 40%;
+	display: inline-block;
+	padding: 2px;
+}
+
+.btnSubmit {
+	display: inline-block;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	background-color: #222;
+	color: #fff;
+	position: relative;
+	width: 15%;
+	height: 35px;	
+	top: -2px;
+	text-align: center;
+	line-height: 190%;
+}
+
+#logo{
+	position: relative;
+	height: 400px;
+	width: 400px;
+	top: 50px;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+}
+
+#mensaje {
+	position:relative;
+	width: 400px;
+	top: -10px;
+	left: -30px;
+	right: 0px;
+	margin: auto;
+	color: #181818;
+	text-align: center;
+}
+
+#aviso {
+	position: relative;
+	left: -30px;
+	width: 100%;
+	height: 35px;
+	top: 50px;
+	text-align: center;
+	color: #700;
+}

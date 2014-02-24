@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+#toma el directorio de configuracion para el deploy en diferentes ambientes.
+#conf = open('../Conf/db.conf', 'r')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -36,7 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login',
+    'django_jenkins',
+    'sistema_pe',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,19 +52,54 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'proyectos_ecys.urls'
+ROOT_URLCONF = 'ProyectosEcys.urls'
 
-WSGI_APPLICATION = 'proyectos_ecys.wsgi.application'
+WSGI_APPLICATION = 'ProyectosEcys.wsgi.application'
 
+
+JENKINS_TASKS = (
+	'django_jenkins.tasks.run_pylint',
+        'django_jenkins.tasks.with_coverage',
+        'django_jenkins.tasks.django_tests',   # select one django or
+        #'django_jenkins.tasks.dir_tests'      # directory tests discovery
+        'django_jenkins.tasks.run_pep8',
+#	'django_jenkins.tasks.run_flake8',
+#        'django_jenkins.tasks.run_pyflakes',
+#        'django_jenkins.tasks.run_jslint',
+#        'django_jenkins.tasks.run_csslint',    
+#        'django_jenkins.tasks.run_sloccount',    
+#        'django_jenkins.tasks.lettuce_tests',
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
 DATABASES = {
+#    'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME':  conf.readline().strip(),
+#        'USER':  conf.readline().strip(),
+#        'HOST':  conf.readline().strip(),
+#	'PASSWORD': conf.readline().strip()  
+#    }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':  'proyectos_ecys_db',
+        'USER':  'AyD2',
+        'HOST':  'localhost',
+        'PASSWORD': 'AyD2'
     }
+    #'
+    #'test_database':{
+    #   'ENGINE': 'django.db.backends.postgresql_psycopg2',
+      #  'NAME': 'proyectos_ecys_pdb',
+       # 'USER': 'AyD2',
+        #'HOST': 'localhost'
+
+    #}
 }
 
 # Internationalization

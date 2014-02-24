@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>Proyectos Ecys</title>
+	<link rel="stylesheet" href="{% static 'sistema_pe/index.css' %}">
+</head>
+<body>
+
+	<div id="logo" >
+		<img width='350px' height="350px" src="{% static 'sistema_pe/Images/pecys.png'%}" >
+	</div>
+
+	<header>
+
+		
+	</header>
+	<div id="mensaje">
+		<h2>Toma el control de tus proyectos!!</h2>
+	</div>
+	<div id="login_form">
+		<form action="/login/" method="POST" name="frmLogin">
+			{% csrf_token %}
+			<input class="txtInput" type="text" name="usrNombre" placeholder="Usuario">
+			<input class="txtInput" type="text" name="usrClave" placeholder="Contrase;a">
+			<!--<input class="" type="submit" value="Aceptar">-->
+			<div class="btnSubmit" onClick="document.forms['frmLogin'].submit()">Entrar</div>
+		</form>
+	</div>
+	<div id="aviso">
+		{% if aceptado %}
+			<small>El usuario {{ usuario }} no pudo logearse</small>
+		{% endif %}
+	</div>
+	<footer>
+		<nav>
+			<div class="boton">About</div><!--
+			--><div class="boton">Terminos</div><!--
+			--><div class="boton">Ayuda</div>
+		</nav>
+	</footer>
+</body>
+</html>

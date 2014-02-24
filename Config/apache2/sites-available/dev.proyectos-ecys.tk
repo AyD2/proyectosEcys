@@ -1,0 +1,51 @@
+<VirtualHost *:80>
+
+        ServerAdmin webmaster@localhost
+        ServerName dev.proyectos-ecys.tk
+        ServerAlias www.dev.proyectos-ecys.tk
+        DocumentRoot /var/www/dev.proyectos-ecys.tk/ProyectosEcys
+
+        <Directory /var/www/dev.proyectos-ecys.tk>
+                Order allow,deny
+                Allow from all
+        </Directory>
+
+        WSGIDaemonProcess ProyectosEcys processes=2 threads=15 display-name=%{GROUP}
+        WSGIProcessGroup ProyectosEcys
+        WSGIScriptAlias / /var/www/dev.proyectos-ecys.tk/ProyectosEcys/apache/django.wsgi
+
+#       Alias /robots.txt /path/to/mysite.com/static/robots.txt
+#       Alias /favicon.ico /path/to/mysite.com/static/favicon.ico
+
+#       AliasMatch ^/([^/]*\.css) /path/to/mysite.com/static/styles/$1
+
+#       Alias /media/ /path/to/mysite.com/media/
+        Alias /static/ /var/www/dev.proyectos-ecys.tk/static/
+
+        <Directory /var/www/dev.proyectos-ecys.tk/static>
+                Order deny,allow
+                Allow from all
+        </Directory>
+
+#       <Directory /var/www/dev.proyectos-ecys.tk/media>
+#               Order deny,allow
+#               Allow from all
+#       </Directory>
+
+#       WSGIScriptAlias / /var/www/dev.proyectos-ecys.tk/wsgi.py
+
+#       <Directory /var/www/dev.proyectos-ecys.tk/ProyectosEcys>
+#               <Files wsgi.py>
+#               Order allow,deny
+#               Allow from all
+#               </Files>
+#       </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+#       CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>

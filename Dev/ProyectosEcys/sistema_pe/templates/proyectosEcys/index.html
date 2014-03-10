@@ -41,7 +41,7 @@
             <div id="login_form">
                 <form action="/login/" method="POST" name="frmLogin">
                     {% csrf_token %}
-                    <input class="txtInput" type="text" name="usrNombre" placeholder="Usuario">
+                    <input class="txtInput" type="text" name="usrCarnet" placeholder="Usuario">
                     <input class="txtInput" type="text" name="usrClave" placeholder="Contrase;a">
                     <div class="btnSubmit" onClick="document.forms['frmLogin'].submit()">Entrar</div>
                 </form>
@@ -51,13 +51,6 @@
                     <small id="anuncio">El usuario {{ usuario }} no pudo logearse</small>
                 {% endif %}
             </div>
-            <!--<div class="menuPrincipal">
-                <nav>
-                    <div class="boton">About</div><!--
-                    --><div class="boton">Terminos</div><!--
-                    --><div class="boton">Ayuda</div>
-                </nav>
-            </div>-->
         </section>
 
         <section id="secundario">

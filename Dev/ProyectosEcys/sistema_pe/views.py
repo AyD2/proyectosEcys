@@ -10,24 +10,22 @@ def login(request):
         En esta pagina se hace el login de usuario normal'''
 
     if request.method == 'POST':
-        nombre = request.POST['usrNombre']
+        carnet = request.POST['usrCarnet']
         clave = request.POST['usrClave']
-        if log.login(nombre, clave):
-            request.session['nombre_usuario'] = nombre
+        if log.login(carnet, clave):
+            request.session['carnet_usuario'] = carnet 
             request.session['logueado'] = True
             print "logeado satisfactoriamente"
-            contexto = {'usuario': nombre, 'clave': clave
+            contexto = {'usuario': carnet, 'clave': clave
                 , 'aceptado': False}
             return HttpResponseRedirect('/perfil')
-            #return render(request, 'sistema_pe/usuario.html'
-            #    , contexto)
         else:
             print "no se pudo logear"
             request.session['logueado'] = False
             contexto = {'usuario': nombre, 'clave': clave
                 , 'aceptado': True}
             return render(request, 'proyectosEcys/index.html'
-                , {'usuario': nombre
+                , {'usuario':carnet 
                 , 'clave': clave
                 , 'aceptado': True})
 
@@ -43,8 +41,7 @@ def index(request):
 def perfil(request):
     ''' responde al request de la pagina inicial de un usuario.
         La llamada se hace luego de un login satisfactorio'''
-
-    if hasattr(request.session, 'logueado'):
-        return render(request, 'sistema_pe/usuario.html')
-    else:
-        return HttpResponse("hijue cienmil putas que haces aqui mierda!!!!")
+    #if hasattr(request.session, 'logueado'):
+    return render(request, 'sistema_pe/usuario.html')
+    #else:
+    #    return HttpResponse("hijue cienmil putas que haces aqui mierda!!!!")

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>Proyectos Ecys</title>
+    <link rel="stylesheet" href="{% static 'sistema_pe/usuario.css' %}">
+</head>
+<body>
+    {% if request.session.logueado %}
+        <header>
+            <h1>logeado el usuario {{request.session.nombre_usuario}}</h1>
+            <a href="/logout/">salir</a>
+        </header>
+    {% else %}
+        <h3>No tiene los permisos suficientes par estar aqui<h3>
+    {% endif %}
+</body>
+</html>

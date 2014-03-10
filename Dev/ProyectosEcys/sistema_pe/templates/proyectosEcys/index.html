@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	{% load staticfiles %}
-	<meta charset="UTF-8">
-	<title>Proyectos Ecys</title>
-	<link rel="stylesheet" href="{% static 'sistema_pe/index.css' %}">
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>Proyectos Ecys</title>
+    <link rel="stylesheet" href="{% static 'sistema_pe/index.css' %}">
+    <link rel="stylesheet" href="{% static 'sistema_pe/onepage-scroll.css' %}">
+    <script type="text/javascript" src="{% static 'sistema_pe/scripts/jquery-2.1.0.min.js' %}"> </script>
+    <script type="text/javascript" src="{% static 'sistema_pe/scripts/index.js' %}" > </script>
+    <script type="text/javascript" src="{% static 'sistema_pe/scripts/jquery.onepage-scroll.min.js' %}" > </script>
+
 </head>
-<body>
+<body style="overflow: hidden">
 
-	<div id="logo" >
-		<img width='350px' height="350px" src="{% static 'sistema_pe/Images/pecys.png'%}" >
-	</div>
+    <div class="main">
+        <section id="principal">
+            <div id="central">
+                <div class="logoIzquierda" >
+                    <img class="logLateral" src="{% static 'sistema_pe/Images/Ecys.png'%}" />
+                    <div class="mensaje">
+                        <h2>Toma el control de tus proyectos!<h2>
+                    </div>
+                </div><!--
 
-	<header>
+                --><div class="logo">
+                    <img class="logCentral" src="{% static 'sistema_pe/Images/pecys4.png'%}" />
+                    <div class="mensaje">
+                        <h2>Toma el control de tus proyectos!<h2>
+                    </div>
+                </div><!--
 
-		
-	</header>
-	<div id="mensaje">
-		<h2>Toma el control de tus proyectos!!</h2>
-	</div>
-	<div id="login_form">
-		<form action="/login/" method="POST" name="frmLogin">
-			{% csrf_token %}
-			<input class="txtInput" type="text" name="usrNombre" placeholder="Usuario">
-			<input class="txtInput" type="text" name="usrClave" placeholder="Contrase;a">
-			<!--<input class="" type="submit" value="Aceptar">-->
-			<div class="btnSubmit" onClick="document.forms['frmLogin'].submit()">Entrar</div>
-		</form>
-	</div>
-	<div id="aviso">
-		{% if aceptado %}
-			<small>El usuario {{ usuario }} no pudo logearse</small>
-		{% endif %}
-	</div>
-	<footer>
-		<nav>
-			<div class="boton">About</div><!--
-			--><div class="boton">Terminos</div><!--
-			--><div class="boton">Ayuda</div>
-		</nav>
-	</footer>
+                --><div class="logoDerecha">
+                    <img class="logLateral" src="{% static 'sistema_pe/Images/git.png'%}" />
+                    <div class="mensaje">
+                        <h2>Gestiona y ordena tus proyectos!</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div id="login_form">
+                <form action="/login/" method="POST" name="frmLogin">
+                    {% csrf_token %}
+                    <input class="txtInput" type="text" name="usrNombre" placeholder="Usuario">
+                    <input class="txtInput" type="text" name="usrClave" placeholder="Contrase;a">
+                    <div class="btnSubmit" onClick="document.forms['frmLogin'].submit()">Entrar</div>
+                </form>
+            </div>
+            <div id="aviso">
+                {% if aceptado %}
+                    <small id="anuncio">El usuario {{ usuario }} no pudo logearse</small>
+                {% endif %}
+            </div>
+            <!--<div class="menuPrincipal">
+                <nav>
+                    <div class="boton">About</div><!--
+                    --><div class="boton">Terminos</div><!--
+                    --><div class="boton">Ayuda</div>
+                </nav>
+            </div>-->
+        </section>
+
+        <section id="secundario">
+            asdfk jlasdifj o
+        </section>
+
+    </div>
+    <div class="menuPrincipal">
+        <nav>
+            <div class="boton">About</div><!--
+            --><div class="boton">Terminos</div><!--
+            --><div class="boton">Ayuda</div>
+        </nav>
+    </div>
 </body>
 </html>

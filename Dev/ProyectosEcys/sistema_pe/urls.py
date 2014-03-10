@@ -1,8 +1,12 @@
+''' Modulo encargado del direccionamiento de las url que bienen desde
+    ProyectoEcys.urls.py'''
 from django.conf.urls import patterns, url
+import sistema_pe.views
 
-import views
-
-urlpatterns = patterns('',
-        url(r'^$', views.index, name='index'),
-        #url(r'^login/$', views.login, name='login'),
+urlpatterns = patterns(
+    '',
+    url(r'^$', sistema_pe.views.index, name='usuario'),
+    url(r'^login/$', sistema_pe.views.login, name='index'),
+    url(r'^perfil/$', sistema_pe.views.perfil, name='perfil'),
+    url(r'^logout/$', sistema_pe.views.logout, name='logout'),
 )

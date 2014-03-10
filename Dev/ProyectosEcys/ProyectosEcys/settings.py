@@ -29,6 +29,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Application definition
 
@@ -52,13 +53,24 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+    "django.core.context_processors.request"
+)
+
 ROOT_URLCONF = 'ProyectosEcys.urls'
 
 WSGI_APPLICATION = 'ProyectosEcys.wsgi.application'
 
 
 JENKINS_TASKS = (
-	'django_jenkins.tasks.run_pylint',
+    'django_jenkins.tasks.run_pylint',
         'django_jenkins.tasks.with_coverage',
         'django_jenkins.tasks.django_tests',   # select one django or
         #'django_jenkins.tasks.dir_tests'      # directory tests discovery
@@ -66,8 +78,8 @@ JENKINS_TASKS = (
 #	'django_jenkins.tasks.run_flake8',
 #        'django_jenkins.tasks.run_pyflakes',
 #        'django_jenkins.tasks.run_jslint',
-#        'django_jenkins.tasks.run_csslint',    
-#        'django_jenkins.tasks.run_sloccount',    
+#        'django_jenkins.tasks.run_csslint',
+#        'django_jenkins.tasks.run_sloccount',
 #        'django_jenkins.tasks.lettuce_tests',
 )
 
@@ -81,16 +93,16 @@ DATABASES = {
 #        'NAME':  conf.readline().strip(),
 #        'USER':  conf.readline().strip(),
 #        'HOST':  conf.readline().strip(),
-#	'PASSWORD': conf.readline().strip()  
+#	'PASSWORD': conf.readline().strip()
 #    }
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':  'proyectos_ecys_db',
-        'USER':  'AyD2',
+        'USER':  'tom',
         'HOST':  'localhost',
-        'PASSWORD': 'AyD2'
+        'PASSWORD': 'tom'
     }
     #'
     #'test_database':{
@@ -101,6 +113,10 @@ DATABASES = {
 
     #}
 }
+
+#TEMPLATE_CONTEXT_PROCESSORS = {
+    #'django.core.context_processors.request',
+#}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/

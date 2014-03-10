@@ -1,23 +1,50 @@
+''' El siguiente modulo es el encargado de responder las peticiones.'''
 from django.shortcuts import render
-from hashlib import sha512
 from sistema_pe import login as log
+from django.http import HttpResponseRedirect, HttpResponse
 
 # Create your views here.
 
-def index(request):
+def login(request):
+    ''' Responde al request del index.
+        En esta pagina se hace el login de usuario normal'''
+
     if request.method == 'POST':
         nombre = request.POST['usrNombre']
         clave = request.POST['usrClave']
         if log.login(nombre, clave):
+            request.session['nombre_usuario'] = nombre
+            request.session['logueado'] = True
             print "logeado satisfactoriamente"
-            contexto = {'usuario': nombre, 'clave': clave, 'aceptado': False}
-            return render(request, 'sistema_pe/index.html', contexto)
-        else: 
+            contexto = {'usuario': nombre, 'clave': clave
+                , 'aceptado': False}
+            return HttpResponseRedirect('/perfil')
+            #return render(request, 'sistema_pe/usuario.html'
+            #    , contexto)
+        else:
             print "no se pudo logear"
-            contexto = {'usuario': nombre, 'clave': clave, 'aceptado': True}
-            return render(request, 'proyectosEcys/index.html', {'usuario': nombre, 'clave': clave, 'aceptado': True})
+            request.session['logueado'] = False
+            contexto = {'usuario': nombre, 'clave': clave
+                , 'aceptado': True}
+            return render(request, 'proyectosEcys/index.html'
+                , {'usuario': nombre
+                , 'clave': clave
+                , 'aceptado': True})
 
+def logout(request):
+    del request.session['nombre_usuario']
+    del request.session['logueado']
+    return HttpResponseRedirect('/')
 
-def login(request):
-    if request.method == 'POST':
-        print "formularioo!!!"
+def index(request):
+    contexto = {}
+    return render(request, 'proyectosEcys/index.html', contexto)
+
+def perfil(request):
+    ''' responde al request de la pagina inicial de un usuario.
+        La llamada se hace luego de un login satisfactorio'''
+
+    if hasattr(request.session, 'logueado'):
+        return render(request, 'sistema_pe/usuario.html')
+    else:
+        return HttpResponse("hijue cienmil putas que haces aqui mierda!!!!")

@@ -1,20 +1,19 @@
 from hashlib import sha512
 from sistema_pe.models import Usuario
 
-def login(nombre, clave):
+def login(carnet, clave):
     try:
-        us = Usuario.objects.get(nombre=nombre)
+        us = Usuario.objects.get(carnet=carnet)
         if us.clave == sha512(clave).hexdigest():
             return True
-#x
         else:
             return False
     except:
         return False
     
-def obtener_usuario(nombre):
+def obtener_usuario(carnet):
     try:
-        us = Usuario.objects.get(nombre=nombre)
+        us = Usuario.objects.get(carnet=carnet)
         return us
     except:
         return None

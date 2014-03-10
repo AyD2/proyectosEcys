@@ -11,22 +11,22 @@ class Unittest_Login(TestCase):
     def preparar(self):
         c = sha512('clave').hexdigest()
         c2 = sha512('clave2').hexdigest()
-        Usuario.objects.create(nombre='usuario', clave=c)
-        Usuario.objects.create(nombre='usuario2', clave=c2)
+        Usuario.objects.create(carnet='200819222', clave=c)
+        Usuario.objects.create(carnet='200815489', clave=c2)
 
     def test_login_login(self):
         self.preparar()
-        us = Usuario.objects.get(nombre='usuario')
-        us2 = Usuario.objects.get(nombre='usuario2')
-        self.assertEquals(login.login('usuario', 'clave'),True
+        us = Usuario.objects.get(carnet='200819222')
+        us2 = Usuario.objects.get(carnet='200815489')
+        self.assertEquals(login.login('200819222', 'clave'),True
                                     , "Si loguea satisfactoriamente")
-        self.assertEquals(login.login('usuario2', 'clave'), False
+        self.assertEquals(login.login('200815489', 'clave'), False
                                      , "Si evita los loguins incorrectos")
 
     def test_login_db(self):
         self.preparar()
         usFalso = login.obtener_usuario('nombreFalso')
-        usVerdadero = login.obtener_usuario('usuario')
+        usVerdadero = login.obtener_usuario('200819222')
         self.assertIsNone(usFalso)
         self.assertIsNotNone(usVerdadero)
-                                                                                                                                            
+

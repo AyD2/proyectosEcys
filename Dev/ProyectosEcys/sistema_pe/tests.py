@@ -12,8 +12,8 @@ class Unittest_Login(TestCase):
     def preparar(self):
         c = sha512('clave').hexdigest()
         c2 = sha512('clave2').hexdigest()
-        Usuario.objects.create(carnet='200819222', clave=c)
-        Usuario.objects.create(carnet='200815489', clave=c2)
+        Usuario.objects.create(carnet='200819222', clave=c, tipo_usuario=True)
+        Usuario.objects.create(carnet='200815489', clave=c2, tipo_usuario=True)
 
     def test_login_login(self):
         self.preparar()

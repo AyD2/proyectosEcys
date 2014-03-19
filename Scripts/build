@@ -23,13 +23,13 @@ python ProyectosEcys/manage.py jenkins sistema_pe
 
 echo "Copy Proyect to Dev Envioroment"
 echo "Changing to www-data"
-sudo -u www-data cp -rv Conf /var/www/dev.proyectos-ecys.tk/
-sudo -u www-data cp -rv ProyectosEcys /var/www/dev.proyectos-ecys.tk/
+sudo -u www-data cp -rv Conf /var/www/proyectos-ecys.tk/
+sudo -u www-data cp -rv ProyectosEcys /var/www/proyectos-ecys.tk/
 echo "Moving Static Files"
-sudo -u www-data rm -rf /var/www/dev.proyectos-ecys.tk/static
-sudo -u www-data cp -rv /var/www/dev.proyectos-ecys.tk/ProyectosEcys/sistema_pe/static /var/www/dev.proyectos-ecys.tk/
+sudo -u www-data rm -rf /var/www/proyectos-ecys.tk/static
+sudo -u www-data cp -rv /var/www/proyectos-ecys.tk/ProyectosEcys/sistema_pe/static /var/www/proyectos-ecys.tk/
 echo "Syncing DB"
-sudo -u www-data python /var/www/dev.proyectos-ecys.tk/ProyectosEcys/manage.py syncdb
+sudo -u www-data python /var/www/proyectos-ecys.tk/ProyectosEcys/manage.py syncdb
 echo "Starting Unit TEst"
 
 #echo "Changing Onwer to www-data"

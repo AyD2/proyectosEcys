@@ -1,5 +1,5 @@
 
-#from django.test import TestCase
+from django.test import TestCase
 from sistema_pe.models import Usuario
 from hashlib import sha512
 from sistema_pe import login
@@ -7,9 +7,9 @@ from sistema_pe import login
 #Create your tests here.
 
 
-#class Unittest_Login(TestCase):
+class Unittest_Login(TestCase):
 
-'''    def preparar(self):
+    def preparar(self):
         c = sha512('clave').hexdigest()
         c2 = sha512('clave2').hexdigest()
         Usuario.objects.create(carnet='200819222', clave=c)
@@ -29,7 +29,7 @@ from sistema_pe import login
         usFalso = login.obtener_usuario('nombreFalso')
         usVerdadero = login.obtener_usuario('200819222')
         self.assertIsNone(usFalso)
-        self.assertIsNotNone(usVerdadero)  '''
+        self.assertIsNotNone(usVerdadero)  
 
 from django.test import LiveServerTestCase
 from selenium import webdriver

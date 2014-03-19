@@ -15,8 +15,6 @@ class Unittest_Login(TestCase):
         c2 = sha512('clave2').hexdigest()
         Usuario.objects.create(carnet='200819222', clave=c)
         Usuario.objects.create(carnet='200815489', clave=c2)
-        self.browser = webdriver.Firefox()
-        self.browser.implicity_wait(3)
 
     def test_login_login(self):
         self.preparar()
@@ -34,11 +32,21 @@ class Unittest_Login(TestCase):
         self.assertIsNone(usFalso)
         self.assertIsNotNone(usVerdadero)
 
-    def tearDown(self):
+    
+class Selenium_test(LiveServerTestCase):
+
+    def preparar(self):
+        self.browser = webdriver.Firefox()
+        self.browser.implicity_wait(3)
+
+    def bajar(self):
         self.browser.quit()
+
 
     def pueden_entrar_a_admin_site(self):
         self.browser.get(self.live_server_url + '/admin/')
         body = self.browser.find_element_by_tag_name('body')
         self.assertIn('Django admin', body.text)
         self.fail('fin de prueba')
+
+

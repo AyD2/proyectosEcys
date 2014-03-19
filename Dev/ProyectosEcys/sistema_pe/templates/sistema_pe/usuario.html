@@ -1,19 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     {% load staticfiles %}
-    <meta charset="UTF-8">
-    <title>Proyectos Ecys</title>
+    <meta charset="utf-8">
+    <title>proyectos ecys</title>
     <link rel="stylesheet" href="{% static 'sistema_pe/usuario.css' %}">
 </head>
 <body>
     {% if request.session.logueado %}
         <header>
-            <h1>logeado el usuario {{request.session.nombre_usuario}}</h1>
             <a href="/logout/">salir</a>
+            <div id="herramientas">
+                <div class="barMenu" id="menuclases">
+                </div><!--
+                --><div class="barMenu" id="menuconf">
+                </div>
+            </div>
         </header>
+        <div id="contenido">
+        </div>
     {% else %}
-        <h3>No tiene los permisos suficientes par estar aqui<h3>
+        <h3>no tiene los permisos suficientes par estar aqui<h3>
     {% endif %}
 </body>
 </html>

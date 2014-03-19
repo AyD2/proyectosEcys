@@ -1,0 +1,56 @@
+.triangulo{
+    position: absolute;
+    right: 0px;
+    width: 0px;
+    height: 0px;
+    border-bottom: 15px solid transparent;
+    border-top: 15px solid transparent; /* right arrow slant */
+    font-size: 0;
+    line-height: 0;
+}
+
+.t1 {
+    border-left: 15px solid #008b8b; /* bottom, add background color here */
+    background-color: #b8860b; 
+}
+
+.t2 {
+    border-left: 15px solid #b8860b; /* bottom, add background color here */
+    background-color: #f08080;
+}
+
+.t3 {
+    border-left: 15px solid #f08080; 
+    background-color: #fff;
+}
+
+.flecha {
+    display: inline-block;
+}
+
+#Lblusuario {
+    background-color: #008b8b;
+    top: 70px;
+    left: 200px;
+    width: 90px;
+    height: 30px;
+    position: fixed;
+}
+
+#Lblclase{
+    top: 70px;
+    background-color: #b8860b;
+    width: 90px;
+    left: 290px;
+    height: 30px;
+    position: fixed;
+}
+
+#Lblproyecto{
+    top: 70px;
+    left: 380px;
+    width: 90px;
+    height: 30px;
+    position: fixed;
+    background-color: #f08080;
+}

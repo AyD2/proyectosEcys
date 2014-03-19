@@ -69,20 +69,19 @@ ROOT_URLCONF = 'ProyectosEcys.urls'
 WSGI_APPLICATION = 'ProyectosEcys.wsgi.application'
 
 
-JENKINS_TASKS = (
-    'django_jenkins.tasks.run_pylint',
-        'django_jenkins.tasks.with_coverage',
-        'django_jenkins.tasks.django_tests',   # select one django or
+##JENKINS_TASKS = (
+##    'django_jenkins.tasks.run_pylint',
+##        'django_jenkins.tasks.with_coverage',
+##        'django_jenkins.tasks.django_tests',   # select one django or
         #'django_jenkins.tasks.dir_tests'      # directory tests discovery
-        'django_jenkins.tasks.run_pep8',
+##        'django_jenkins.tasks.run_pep8',
 #	'django_jenkins.tasks.run_flake8',
 #        'django_jenkins.tasks.run_pyflakes',
 #        'django_jenkins.tasks.run_jslint',
 #        'django_jenkins.tasks.run_csslint',
 #        'django_jenkins.tasks.run_sloccount',
 #        'django_jenkins.tasks.lettuce_tests',
-)
-
+#) 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 DATABASES = {
@@ -92,14 +91,14 @@ DATABASES = {
         'USER':  'tom',
         'HOST':  'localhost',
         'PASSWORD': 'tom'
-    }#,
-    #'test_database': {
-    #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #    'NAME': 'proyectos_ecys_pdb',
-    #    'USER': 'tom',
-    #    'HOST': 'localhost',
-    #    'PASSWORD' : 'tom'
-    #}
+    },
+    'test_database': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'tests_proyectos_ecys_pdb',
+        'USER': 'tom',
+        'HOST': 'localhost',
+        'PASSWORD' : 'tom'
+    }
 }
 
 #TEMPLATE_CONTEXT_PROCESSORS = {

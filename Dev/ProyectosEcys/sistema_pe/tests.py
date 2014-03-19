@@ -1,5 +1,5 @@
 
-from django.test import TestCase
+#from django.test import TestCase
 from sistema_pe.models import Usuario
 from hashlib import sha512
 from sistema_pe import login
@@ -37,11 +37,11 @@ from selenium import webdriver
 
 class Selenium_test(LiveServerTestCase):
 
-    def preparar(self):
+    def setUp(self):
         self.browser = webdriver.Firefox()
         self.browser.implicity_wait(3)
 
-    def bajar(self):
+    def tearDown(self):
         self.browser.quit()
 
 

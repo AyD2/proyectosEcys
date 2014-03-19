@@ -31,6 +31,8 @@ class Unittest_Login(TestCase):
         self.assertIsNone(usFalso)
         self.assertIsNotNone(usVerdadero)  
 
+
+
 from django.test import LiveServerTestCase
 from selenium import webdriver
 
@@ -46,9 +48,7 @@ class Selenium_test(LiveServerTestCase):
 
 
     def pueden_entrar_a_admin_site(self):
-        self.preparar()
         self.browser.get(self.live_server_url + '/admin/')
         body = self.browser.find_element_by_tag_name('body')
         self.assertIn('Django admin', body.text)
         self.fail('fin de prueba')
-        self.bajar()

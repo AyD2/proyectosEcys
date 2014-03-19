@@ -12,8 +12,8 @@ class Unittest_Login(TestCase):
     def preparar(self):
         c = sha512('clave').hexdigest()
         c2 = sha512('clave2').hexdigest()
-        Usuario.objects.create(carnet='200819222', clave=c)
-        Usuario.objects.create(carnet='200815489', clave=c2)
+        Usuario.objects.create(carnet='200819222', clave=c, tipo_usuario=True)
+        Usuario.objects.create(carnet='200815489', clave=c2, tipo_usuario=False)
 
     def test_login_login(self):
         self.preparar()
@@ -46,9 +46,4 @@ class Selenium_test(LiveServerTestCase):
 
 
     def pueden_entrar_a_admin_site(self):
-        self.preparar()
-        self.browser.get(self.live_server_url + '/admin/')
-        body = self.browser.find_element_by_tag_name('body')
-        self.assertIn('Django admin', body.text)
         self.fail('fin de prueba')
-        self.bajar()

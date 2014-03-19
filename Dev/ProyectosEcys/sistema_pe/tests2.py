@@ -2,12 +2,12 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 
 
-class Selenium_test(LiveServerTestCase):
+class Selenium_test2(LiveServerTestCase):
 
     def preparar(self):
         self.browser = webdriver.Firefox()
         self.browser.implicity_wait(3)
-
+ 
     def bajar(self):
         self.browser.quit()
 

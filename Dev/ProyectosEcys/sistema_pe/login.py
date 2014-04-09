@@ -10,7 +10,7 @@ def login(carnet, clave):
             return False
     except:
         return False
-    
+
 def obtener_usuario(carnet):
     try:
         us = Usuario.objects.get(carnet=carnet)

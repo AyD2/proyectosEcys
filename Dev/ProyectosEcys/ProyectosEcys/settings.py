@@ -81,7 +81,7 @@ JENKINS_TASKS = (
 #        'django_jenkins.tasks.run_csslint',
 #        'django_jenkins.tasks.run_sloccount',
 #        'django_jenkins.tasks.lettuce_tests',
-) 
+)
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 DATABASES = {

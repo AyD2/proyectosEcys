@@ -25,16 +25,21 @@ header{
     position: absolute;
     right: 50px;
     top: 0px;
-    width: 150px;
+    width: 200px;
     height: 100%;
 }
 
 .barMenu {
+    margin: 3px;
     position: relative;
-    width: 33%;
+    width: 25%;
     display: inline-block;
     cursor: pointer;
     height: 100%;
+}
+
+#menurepo{
+    background-color: #12;
 }
 
 #menuconf {

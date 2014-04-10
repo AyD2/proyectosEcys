@@ -30,6 +30,7 @@ header{
 }
 
 .barMenu {
+    margin: 3px;
     position: relative;
     width: 25%;
     display: inline-block;

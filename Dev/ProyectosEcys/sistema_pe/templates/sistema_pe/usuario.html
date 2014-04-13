@@ -2,32 +2,45 @@
 <html lang="en">
 <head>
     {% load staticfiles %}
+    {% load dajaxice_templatetags %}
     <meta charset="utf-8">
     <title>proyectos ecys</title>
     <link rel="stylesheet" href="{% static 'sistema_pe/usuario.css' %}">
+    {% dajaxice_js_import %}
+    <script type="text/javascript" src="{% static 'sistema_pe/scripts/jquery-2.1.0.min.js' %}"> </script>
+    <script type="text/javascript" src="{% static 'sistema_pe/scripts/usuario.js' %}" > </script>
 </head>
 <body>
     {% if request.session.logueado %}
-        <header>
-            <img id="logo" src="{% static 'sistema_pe/Images/pecys4.png' %}" alt="">
-            <div id="herramientas">
-                <div class="barMenu" id="menurepos">
-                    <img class="logMenu" src="{% static 'sistema_pe/Images/code.png'%}" />
-                </div><!--
-                --><div class="barMenu" id="menuclases">
-                    <img class="logMenu" src="{% static 'sistema_pe/Images/clase.png'%}" />
-                </div><!--
-                --><div class="barMenu" id="menuconf">
-                    <img class="logMenu" src="{% static 'sistema_pe/Images/configuracion.png'%}" />
-                </div><!--
-                --><div class="barMenu" id="menusalir">
-                    <img class="logMenu" src="{% static 'sistema_pe/Images/logout.png'%}" />
+        <div id="lateral">
+            <div id="titulo" class="en_encabezado">
+                <div id="logo">
+                    <img id="imglogo" src="{% static 'sistema_pe/Images/confil.png' %}" alt="">
+                </div>
+                <div id="herramientas">
+                    <div id="barra">
+                        <div id="menucode" class="logMenu" >
+                            <img class="menu" src="{% static 'sistema_pe/Images/codeNormal.png'%}" alt="">
+                        </div><!--
+                        --><div id="menuclase" class="logMenu"><img class="menu" src="{% static 'sistema_pe/Images/claseNormal.png'%}" alt=""></div><!--
+                        --><div id="menuconfig" class="logMenu"><img class="menu" src="{% static 'sistema_pe/Images/configuracionNormal.png'%}" alt=""></div><!--
+                        --><div id="menulogout" class="logMenu"><img class="menu" src="{% static 'sistema_pe/Images/logoutNormal.png'%}" alt=""></div>
+                    </div>
                 </div>
             </div>
-        </header>
-        <div id="cuerpo">
-            <div id="info"></div>
-            <div id="contenido"></div>
+            <div id="lista_menus">
+                <div id="lst_configuracion">
+                    <div class="item_lst">
+                        Cambiar Contrase;a
+                    </div>
+                    <div class="item_lst">
+                        Cambiar Correo
+                    </div>
+                </div>
+                <div id="lst_workspace">
+                    
+                </div>
+            </div>
         </div>
     {% else %}
         <h3>no tiene los permisos suficientes par estar aqui<h3>

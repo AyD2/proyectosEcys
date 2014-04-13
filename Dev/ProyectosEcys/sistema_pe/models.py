@@ -9,6 +9,11 @@ class Usuario(models.Model):
     tipo_usuario = models.BooleanField()
     correo = models.CharField(max_length=50)
 
+class Asignacion(models.Model):
+    id_carnet = models.ForeignKey('Usuario')
+    id_Clase = models.ForeignKey('Clase')
+
+
 class Repositorio(models.Model):
     proyecto = models.ForeignKey('Proyecto')
     usuario = models.ForeignKey('Usuario')
@@ -21,8 +26,7 @@ class Clase(models.Model):
     tutor = models.ForeignKey('Usuario')
 
 class Semestre(models.Model):
-    ident = models.IntegerField(primary_key=True)
-    ciclo = models.IntegerField()
+    year = models.IntegerField()
     etapa = models.IntegerField()
 
 class Proyecto(models.Model):

@@ -1,5 +1,5 @@
 $(document).ready(function (){
-    alert("mierda");
+    alert("bienvenido");
     $("#menuclase").click(menu_cursos);
 });
 

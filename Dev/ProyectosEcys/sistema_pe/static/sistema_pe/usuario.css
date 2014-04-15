@@ -1,4 +1,6 @@
 body{
+    font: 90% monospace;
+    /*font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;*/
 }
 
 .triangulo{
@@ -62,8 +64,11 @@ body{
 }
 
 #logo{
+    font-weight: 900;
+    font-size: 200%;
+    color: #fff;
     position:absolute;
-    height: 60%;
+    height: 100px;
     width: 100%;
     top: 0px;
     left: 0px;
@@ -113,9 +118,45 @@ body{
 
 #lista_menus {
     position: relative;
-    background-color: #fff;
-    height: 50px;
-    width: 50px;
+    background-color: #343139;
+    width: 100%;
     top: 25%;
+    left: 0px;
+    right: 0px;
+    margin: auto;
 }
 
+.div_list {
+    font-weight: bold;
+    color: #fff;
+    padding-left: 2%;
+    line-height: 25px;
+    width: 98%;
+    height: 25px;
+}
+
+.div_list:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.item_list {
+    font-weight: normal;
+    position: relative;
+    background-color: #99b2cc;
+    line-height: 25px;
+    height: 25px;
+    width: 90%;
+    padding-left:10%;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.item_list:hover {
+    background-color: #fff;
+}
+
+.oculto {
+    opacity: 0;
+    height: 0px;
+}

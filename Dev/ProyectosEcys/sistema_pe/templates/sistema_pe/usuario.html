@@ -15,7 +15,9 @@
         <div id="lateral">
             <div id="titulo" class="en_encabezado">
                 <div id="logo">
-                    <img id="imglogo" src="{% static 'sistema_pe/Images/confil.png' %}" alt="">
+                    <!--<img id="imglogo" src="{% static
+                        'sistema_pe/Images/confil.png' %}" alt="">-->
+                    {{ carnet }}
                 </div>
                 <div id="herramientas">
                     <div id="barra">
@@ -29,16 +31,35 @@
                 </div>
             </div>
             <div id="lista_menus">
-                <div id="lst_configuracion">
-                    <div class="item_lst">
+                <div id="list_configuracion">
+                    <div class="div_list" class="collapsable">
+                        Configuracion 
+                    </div>
+                    <div class="item_list">
                         Cambiar Contrase;a
                     </div>
-                    <div class="item_lst">
+                    <div class="item_list">
                         Cambiar Correo
                     </div>
                 </div>
-                <div id="lst_workspace">
-                    
+                <div id="list_workspace" class="collapsable">
+                    <div class="div_list">
+                        Workspace
+                    </div>
+                    <div class="item_list">Repositorios</div>
+                    <div class="item_list">otro</div>
+                    {% for repo in repos %}
+                    <div class="item_list">
+                        {{ repo.direccion }}
+                    </div>
+                    {% endfor %}
+                    <div class="item_list">Commit</div>
+                </div>
+                <div id="list_curso" class="collapsable">
+                    <div class="div_list">
+                        Curso 
+                    </div>
+                   <div class="item_list">cursos</div>
                 </div>
             </div>
         </div>

@@ -1,8 +1,22 @@
 $(document).ready(function (){
     alert("bienvenido");
     $("#menuclase").click(menu_cursos);
+    $(".div_list").click(collapse);
 });
 
+///////////////////////GRAFICOS
+function collapse() {
+    opcion = $(this).text().toLowerCase().trim();
+    $("#list_"+opcion+"> .item_list").toggleClass("oculto");
+}
+
+function uncollapse() {
+    opcion = $(this).text().toLowerCase().trim();
+    $("#list_"+opcion+">.item_list").show(200);
+}
+///////////////////////GENERALES
+
+///////////////////////AJAX
 
 function menu_mis_cursos(){
     Dajaxice.sistema_pe.traer_mis_cursos(callback_mis_cursos);

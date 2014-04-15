@@ -1,6 +1,6 @@
 '''modulo encargado de manejar el login de un usuario'''
 from hashlib import sha512
-from sistema_pe.models import Usuario
+from sistema_pe.models import Usuario, Repositorio
 
 def login(carnet, clave):
     '''funcion para hacer el login de usuario'''
@@ -18,5 +18,16 @@ def obtener_usuario(carnet):
     try:
         us = Usuario.objects.get(carnet=carnet)
         return us
+    except ValueError:
+        return None
+
+
+def obtener_repositorios(carnet):
+    '''funcion que se encarga de buscar los enunciados de los proyectos
+    de un usuario'''
+    try:
+        usu = Usuario.objects.get(carnet=carnet)
+        rp = Repositorio.objects.filter(usuario=usu)
+        return rp
     except ValueError:
         return None

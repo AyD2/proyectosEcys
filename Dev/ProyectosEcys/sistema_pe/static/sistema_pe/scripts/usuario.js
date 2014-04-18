@@ -13,6 +13,7 @@ function peticion_ajax(){
     objeto = $(this);
     opcion = objeto.text().toLowerCase().trim();
     var u = $("#encabezado").text().trim();
+
     console.log(u);
     if(opcion == "gestion de cursos"){
         $(".cont").addClass("poculto");

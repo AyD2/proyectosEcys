@@ -1,10 +1,8 @@
 '''modulo con todas las peticiones ajax'''
-
 from django.utils import simplejson
 from django.core import serializers
 from dajaxice.decorators import dajaxice_register
 from sistema_pe.models import Clase, Usuario, Asignacion
-import print_log
 
 
 @dajaxice_register
@@ -18,6 +16,7 @@ def traer_repos(request):
 def traer_cursos(request, carnet):
     '''obtiene desde la base de datos una lista con todos
     los cursos registrados en el sistema'''
+    print request
     u = Usuario.objects.get(carnet=carnet)
     todas = Clase.objects.all()
     asignacion = Asignacion.objects.filter(id_carnet=u)
@@ -30,13 +29,13 @@ def traer_cursos(request, carnet):
     return simplejson.dumps({'todo': todas_lst, 'asignadas':asig_lst})
 
 @dajaxice_register
-def asignar(request, carnet, clase):
+def asignar_curso(request, carnet, clase):
     '''asigna una clase a un alumno'''
+    print request
     u = Usuario.objects.get(carnet=carnet)
     c = Clase.objects.get(pk=clase)
     asig = Asignacion(id_carnet=u, id_Clase=c)
-    #asig.save()
-    print_log.app_mesaje("se asigno el usuario: "+carnet +"a la clase "+clase)
+    asig.save()
     todas = Clase.objects.all()
     asignacion = Asignacion.objects.filter(id_carnet=u)
     asignadasjson = serializers.serialize("json", asignacion)

@@ -3,46 +3,199 @@ body{
     /*font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;*/
 }
 
-.triangulo{
+.dato_oculto {
+    visibility: hidden;
+}
+
+.triangulo_asig{
     position: absolute;
     right: 0px;
     width: 0px;
     height: 0px;
-    border-bottom: 15px solid transparent;
-    border-top: 15px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
     font-size: 0;
     line-height: 0;
+    border-left: 10px solid #008b8b; /* bottom, add background color here */
+    background-color: #FFFFFF; 
+    display: inline;
 }
 
-
-#logo {
+.triangulo_deasig{
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 60px;
-    height: 60px;
+    left: 0px;
+    width: 0px;
+    height: 0px;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    font-size: 0;
+    line-height: 0;
+    border-right: 10px solid #e05050; /* bottom, add background color here */
+    background-color: #FFFFFF; 
+    display: inline;
 }
+
+.btn_asignar {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    background-color: #008b8b;
+    line-height: 20px;
+    text-align: left;
+    width: 95px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn_deasignar {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    background-color: #e05050;
+    line-height: 20px;
+    text-align: left;
+    width: 95px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.desc {
+    width: 500px;
+    height: 20px;
+    top: 0px;
+    bottom: 0px;
+    left: 10px;
+    margin: auto;
+    display: inline-block;
+    cursor: default;
+}
+
 
 #contenido {
-    background-color: #ff0;
-    width: 50%;
-    height: 50%;
-    top: 75px;
     position: absolute;
+    top: 0px;
+    left: 300px;
+    right: 0px;
+    color: #444444;
+    /*background-color: #111111;*/
+    height: 100%;
 }
 
-#info {
-    background-color: #ddd;
-    width: 50%;
-    height: 50%;
+.cont{
     position: absolute;
-}
-#cuerpo {
-    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 60%;
     top: 100px;
-    width: 100%;
-    height: 300px;
+    margin: auto;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
+
+.poculto {
+    left: -2500px;
+}
+
+.ptitulo{
+    position: absolute;
+    top: 0px;
+    height: 40px;
+    line-height: 20px;
+    width: 100%;
+    /*background-color: #ddd;*/
+    border-bottom: solid 1px;
+}
+
+.clase {
+   position: relative;
+   margin-top: 3px;
+   top: 75px; 
+   width: 100%;
+   background-color: #ffffff;
+   border-bottom: solid 1px #444444;
+   height: 30px;
+   line-height: 30px;
+}
+
+#pasignar {
+    min-height: 100px;
+    /*background-color: #aaa;*/
+}
+
+/**************************CAMBIAR********************************************/
+.contCambio {
+    position: absolute;
+    top: 50px;
+    width: 400px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+}
+.formCambio {
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    width: 200px; 
+}
+.txtfield {
+    position: absolute;
+    width: 200px;
+    height: 25px;
+    line-height: 25px;
+    border: solid 1px #DF6A38;
+    padding-left: 5px;
+}
+
+.btnCambio {
+    position: absolute;
+    width: 75px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+#correo_nuevo {
+    top: 5px;
+}
+#pass {
+    top: 40px;
+}
+#btn_cambiarc {
+    background-color: #DF6A38;
+    color: #ffffff;
+    top: 75px;
+    right: -3px;
+}
+
+#nuevap {
+    top: 5px;
+}
+#rnuevap {
+    top: 40px;
+}
+#passp{
+    top: 75px;
+}
+#btn_cambiarp{
+    top: 105px;
+    background-color: #DF6A38;
+    color: #ffffff;
+    right: -3px;
+}
+
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-ph)
+}
+/**************************CAMBIAR********************************************/
+
+/************************** aqui terminan los paneles *******************************/
+
 
 
 #lateral {
@@ -52,6 +205,7 @@ body{
     width: 300px;
     height: 100%;
     background-color: #343131;
+    border-right: solid 1px;
 }
 
 #titulo {
@@ -59,15 +213,17 @@ body{
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 20%;
+    height: 100px;
     background-color: #DF6A38;
 }
 
-#logo{
+#encabezado {
     font-weight: 900;
     font-size: 200%;
+    text-align: center;
     color: #fff;
-    position:absolute;
+    line-height: 100px;
+    position: absolute;
     height: 100px;
     width: 100%;
     top: 0px;
@@ -82,16 +238,6 @@ body{
     left: 0px;
 }
 
-#imglogo {
-    position: absolute;
-    height: 50%;
-    width: 35%;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    margin: auto;
-}
 
 #barra {
     position: absolute;
@@ -101,13 +247,6 @@ body{
     left: 50px;
     bottom: 0px;
     margin-top: auto;
-}
-
-.logMenu {
-    position: relative;
-    height: 100%;
-    width: 25%;
-    display: inline-block;
 }
 
 .menu{
@@ -120,7 +259,7 @@ body{
     position: relative;
     background-color: #343139;
     width: 100%;
-    top: 25%;
+    top: 100px;
     left: 0px;
     right: 0px;
     margin: auto;
@@ -133,6 +272,7 @@ body{
     line-height: 25px;
     width: 98%;
     height: 25px;
+    cursor: default;
 }
 
 .div_list:hover {
@@ -143,13 +283,16 @@ body{
 .item_list {
     font-weight: normal;
     position: relative;
-    background-color: #99b2cc;
+    background-color: #939fad;
     line-height: 25px;
     height: 25px;
     width: 90%;
     padding-left:10%;
+    border-bottom: solid 1px;
+    border-color: #939fad;
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
+    cursor: pointer;
 }
 
 .item_list:hover {
@@ -159,4 +302,5 @@ body{
 .oculto {
     opacity: 0;
     height: 0px;
+    visibility:hidden;
 }

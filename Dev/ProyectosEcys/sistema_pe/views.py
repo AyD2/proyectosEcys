@@ -41,9 +41,14 @@ def index(request):
 def perfil(request):
     ''' responde al request de la pagina inicial de un usuario.
         La llamada se hace luego de un login satisfactorio'''
-    repos = log.obtener_repositorios(request.session['carnet_usuario'])
+    carnet = request.session['carnet_usuario']
+    repos = log.obtener_repositorios(carnet)
+    clases = log.obtener_clases()
+    usuario = log.obtener_usuario(carnet)
+    misclases = log.obtener_mis_clases(carnet)
     return render(request, 'sistema_pe/usuario.html',
-            {'carnet':request.session['carnet_usuario'], 'repos':repos})
+            {'carnet':request.session['carnet_usuario'], 'repos':repos,
+                'clases':clases,'misclases':misclases, 'usuario':usuario})
 
 
 

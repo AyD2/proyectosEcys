@@ -31,7 +31,7 @@ def llenar():
 
     ayd = Clase(nombre='ayd', seccion='A', semestre=s1, tutor=usuario1)
     ayd2 = Clase(nombre='ayd', seccion='B', semestre=s1, tutor=usuario5)
-    bases = Clase(nombre='ayd', seccion='A', semestre=s1, tutor=usuario5)
+    bases = Clase(nombre='bases', seccion='A', semestre=s1, tutor=usuario5)
 
     ayd.save()
     ayd2.save()

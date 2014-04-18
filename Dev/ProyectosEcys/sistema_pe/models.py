@@ -24,6 +24,7 @@ class Clase(models.Model):
     seccion = models.CharField(max_length=2)
     semestre = models.ForeignKey('Semestre')
     tutor = models.ForeignKey('Usuario')
+    #activa = models.BooleanField()
 
 class Semestre(models.Model):
     year = models.IntegerField()
@@ -35,3 +36,4 @@ class Proyecto(models.Model):
     fecha_entrega = models.DateTimeField()
     fecha_creacion = models.DateTimeField(auto_now=True)
     contenido = models.CharField(max_length=50)
+    #activo = models.BooleanField()

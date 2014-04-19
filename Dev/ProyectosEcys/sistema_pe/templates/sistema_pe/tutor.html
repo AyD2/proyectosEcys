@@ -5,30 +5,32 @@
     {% load dajaxice_templatetags %}
     <meta charset="utf-8">
     <title>proyectos ecys</title>
-    <link rel="stylesheet" href="{% static 'sistema_pe/usuario.css' %}">
+    <link rel="stylesheet" href="{% static 'sistema_pe/tutor.css' %}">
     {% dajaxice_js_import %}
     <script type="text/javascript" src="{% static 'sistema_pe/scripts/jquery-2.1.0.min.js' %}"> </script>
-    <script type="text/javascript" src="{% static 'sistema_pe/scripts/usuario.js' %}" > </script>
+    <script type="text/javascript" src="{% static 'sistema_pe/scripts/tutor.js' %}" > </script>
 </head>
 <body>
     {% if request.session.logueado %}
         <div id="contenido">
-            <div id="pcambiarpass" class="cont poculto">
-                <div class="ptitulo"><h1>&nbsp;&nbsp;Cambio de Contrasenia</h1> </div>
+            <div id="pcrearproyecto" class="cont">
+                <div class="ptitulo"><h1>&nbsp;&nbsp;Crear Nuevo Proyecto</h1> </div>
                     <div class="anuncio"></div>
                 <div class="contCambio">
                     <div class="formCambio">
-                        <div id="nuevap" class="txtfield" contenteditable="true" data-ph="Contrasenia nueva"></div>
-                        <div id="rnuevap" class="txtfield" contenteditable="true" data-ph="Repita su Contrasenia"></div>
-                        <div id="passp" class="txtfield" contenteditable="true" data-ph="Contrasenia actual"></div>
-                        <div id="btn_cambiarp" class="btnCambio">Cambiar</div> 
+                        <select id="proyectonp">
+                            <option>Mierda</option>
+                        </select>
+                        <div id="nombrenp" class="txtfield" contenteditable="true" data-ph="nombre proyecto"></div>
+                        <div id="descripcionnp" class="txtfield" contenteditable="true" data-ph="Descripcion"></div>
+                        <div id="btn_proyectonp" class="btnCambio">Cambiar</div> 
                     </div>
                 </div>
 
             </div>
 
-            <div id="pcambiarcorreo" class="cont">
-                <div class="ptitulo"><h1>&nbsp;&nbsp;Cambio de Correo</h1></div>
+            <div id="pmisproyectos" class="cont poculto">
+                <div class="ptitulo"><h1>&nbsp;&nbsp;Mis proyectos</h1></div>
                     <div class="anuncio"></div>
                 <div class="contCambio">
                     <p>Actualmente usted utiliza el correo: {{usuario.correo}}</p>
@@ -64,35 +66,35 @@
                 </div>
             </div>
             <div id="lista_menus">
-                <div id="list_configuracion">
+                <div id="list_edicion">
                     <div class="div_list" class="collapsable">
-                        Configuracion 
+                        Edicion
                     </div>
                     <div class="item_list">
-                        Cambiar Contraseña
-                    </div>
-                    <div class="item_list">
-                        Cambiar Correo
+                        Cambiar Fecha
                     </div>
                 </div>
                 <div id="list_workspace" class="collapsable">
                     <div class="div_list">
                         Workspace
                     </div>
-                    {% for repo in repos %}
                     <div class="item_list">
-                        {{ repo.direccion }}
+                        Mis Proyectos
+                    </div>
+                    <div class="item_list">
+                        Crear Proyecto
+                    </div>
+                    {% for proy in proyectos %}
+                    <div class="item_list">
+                        {{ proy.nombre }}
                     </div>
                     {% endfor %}
-                    <div class="item_list">Commit</div>
                 </div>
-                <div id="list_curso" class="collapsable">
+                <div id="list_contenido" class="collapsable">
                     <div class="div_list">
-                        Curso
+                        Contenido
                     </div>
-                    <div class="item_list">Gestion de cursos</div>
-                    <div class="item_list">Mis cursos</div>
-                    <div class="item_list">Desasignar un curso</div>
+                    <div class="item_list">Agregar contenido</div>
                 </div>
             </div>
         </div>

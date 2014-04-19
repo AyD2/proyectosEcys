@@ -11,18 +11,33 @@ def login(request):
     if request.method == 'POST':
         carnet = request.POST['usrCarnet']
         clave = request.POST['usrClave']
-        if log.login(carnet, clave):
-            request.session['carnet_usuario'] = carnet
-            request.session['logueado'] = True
-            print "logeado satisfactoriamente"
-            return HttpResponseRedirect('/perfil')
+        tutor = request.POST['tutor']
+        if tutor:
+            if log.login_tutor(carnet, clave):
+                request.session['carnet_usuario'] = carnet
+                request.session['logueado'] = True
+                print "logeado satisfactoriamente"
+                return HttpResponseRedirect('/tutor')
+            else:
+                print "no se pudo logear"
+                request.session['logueado'] = False
+                return render(request, 'proyectosEcys/index.html'
+                    , {'usuario':carnet
+                    , 'clave': clave
+                    , 'aceptado': True})
         else:
-            print "no se pudo logear"
-            request.session['logueado'] = False
-            return render(request, 'proyectosEcys/index.html'
-                , {'usuario':carnet
-                , 'clave': clave
-                , 'aceptado': True})
+            if log.login(carnet, clave):
+                request.session['carnet_usuario'] = carnet
+                request.session['logueado'] = True
+                print "logeado satisfactoriamente"
+                return HttpResponseRedirect('/perfil')
+            else:
+                print "no se pudo logear"
+                request.session['logueado'] = False
+                return render(request, 'proyectosEcys/index.html'
+                    , {'usuario':carnet
+                    , 'clave': clave
+                    , 'aceptado': True})
 
 
 def logout(request):
@@ -50,6 +65,13 @@ def perfil(request):
             {'carnet':request.session['carnet_usuario'], 'repos':repos,
                 'clases':clases,'misclases':misclases, 'usuario':usuario})
 
-
+def tutor(request):
+    ''' responde al request de la pagina inicial de un usuario.
+        La llamada se hace luego de un login satisfactorio'''
+#poner los proyectos!!!!!!!!!!!!!!!!!!!!
+    carnet = request.session['carnet_usuario']
+    usuario = log.obtener_usuario(carnet)
+    return render(request, 'sistema_pe/tutor.html',
+            {'carnet':request.session['carnet_usuario']})
 
 

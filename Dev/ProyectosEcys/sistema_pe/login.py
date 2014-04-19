@@ -13,6 +13,21 @@ def login(carnet, clave):
     except ValueError:
         return False
 
+def login_tutor(carnet, clave):
+    try:
+        us = Usuario.objects.get(carnet=carnet)
+        tu = us.tipo_usuario
+        if us.clave == sha512(clave).hexdigest():
+            if tu:
+                return True
+            else:
+                return False
+        else:
+            return False
+    except ValueError:
+        return False
+    
+
 def obtener_usuario(carnet):
     '''funcion que trae un usuario especifico desde la base de datos'''
     try:

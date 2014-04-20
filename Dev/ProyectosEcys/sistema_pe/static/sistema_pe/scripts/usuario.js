@@ -49,7 +49,7 @@ function peticion_ajax(){
     if(opcion == "mis cursos"){
         $(".cont").addClass("poculto");
         $("#pcursos").removeClass("poculto");
-        //Dajaxice.sistema_pe.traer_mis_cursos(callback_mis_cursos);
+        Dajaxice.sistema_pe.traer_mis_cursos(callback_mis_cursos);
     }
     if(opcion == "cambiar contraseña"){
         $(".cont").addClass("poculto");

@@ -26,6 +26,16 @@ function peticion_ajax(){
         $("#pmisproyectos").removeClass("poculto");
         Dajaxice.sistema_pe.traer_proyectos(callback_proyectos, {'carnet':u});
     }
+    if(opcion == "agregar contenido"){
+        $(".cont").addClass("poculto");
+        $("#pagregarc").removeClass("poculto");
+        Dajaxice.sistema_pe.traer_proyectos(callback_proyectos, {'carnet':u});
+    }
+    if(opcion == "ver contenido anterior"){
+        $(".cont").addClass("poculto");
+        $("#pvercontenido").removeClass("poculto");
+        Dajaxice.sistema_pe.traer_proyectos(callback_proyectos, {'carnet':u});
+    }
 }
 
 

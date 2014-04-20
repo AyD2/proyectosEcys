@@ -11,7 +11,10 @@ def login(request):
     if request.method == 'POST':
         carnet = request.POST['usrCarnet']
         clave = request.POST['usrClave']
-        tutor = request.POST['tutor']
+        try:
+            tutor = request.POST['tutor']
+        except:
+            tutor = False
         if tutor:
             if log.login_tutor(carnet, clave):
                 request.session['carnet_usuario'] = carnet

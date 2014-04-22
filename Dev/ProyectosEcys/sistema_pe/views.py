@@ -43,11 +43,41 @@ def login(request):
                     , 'aceptado': True})
 
 
+
+def upload(request):
+    response_data = {}
+
+    if request.is_ajax():
+        form = UploaderForm(request.POST, request.FILES)
+
+    if form.is_valid():
+        proyecto = Proyecto(
+            clase = Clase.objects.get(),
+            creador = Usuario.objects.get(),
+            fecha_entrega = request.
+            upload=request.FILES['upload'],
+        )
+        upload.name = request.FILES['upload'].name
+        upload.save()
+
+        response_data['status'] = "success"
+        response_data['result'] = "Your file has been uploaded:"
+        response_data['fileLink'] = "/%s" % upload.upload
+
+        return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+    response_data['status'] = "error"
+    response_data['result'] = "We're sorry, but something went wrong. Please be sure that your file respects the upload conditions."
+
+    return HttpResponse(json.dumps(response_data), content_type='application/json')
+
+
 def logout(request):
     '''salir'''
     del request.session['nombre_usuario']
     del request.session['logueado']
     return HttpResponseRedirect('/')
+
 
 
 def index(request):

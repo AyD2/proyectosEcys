@@ -40,6 +40,26 @@ function peticion_ajax(){
 
 
 //////////////////////CALLBACKS AJAX
+function ajax_upload() {
+    var message = '';
+    var options = {
+        url: '/upload/',
+        error: function(response) {
+            alert("salio mal")
+        //message = '<span class="error">We\'re sorry, but something went wrong. Retry.</span>';
+        //$('.upload-message').html(message);
+        //    $('fileInput').val('');
+        //},
+        success: function(response) {
+            alert("salio bien")
+            //message = '<span class="' + response.status + '">' + response.result + '</span> ';
+            //message = ( response.status == 'success' ) ? message + response.fileLink : message;
+            //$('.upload-message').html(message);
+            //$('fileInput').val('');
+        }
+    };
+    $('#uploadForm').ajaxSubmit(options);
+}
 
 
 

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'sistema_pe/tutor.css' %}">
     {% dajaxice_js_import %}
     <script type="text/javascript" src="{% static 'sistema_pe/scripts/jquery-2.1.0.min.js' %}"> </script>
+    <script type="text/javascript" src="{% static 'sistema_pe/scripts/jquery.form.min.js' %}" > </script>
     <script type="text/javascript" src="{% static 'sistema_pe/scripts/tutor.js' %}" > </script>
 </head>
 <body>
@@ -23,7 +24,8 @@
                         </select>
                         <div id="nombrenp" class="txtfield" contenteditable="true" data-ph="nombre proyecto"></div>
                         <div id="descripcionnp" class="txtfield" contenteditable="true" data-ph="Descripcion"></div>
-                        <div id="btn_proyectonp" class="btnCambio">Cambiar</div> 
+                        <input id="filenp" class="input-file" name="upload" type="file">
+                        <div id="btn_proyectonp" class="btnCambio">Crear</div> 
                     </div>
                 </div>
             </div>

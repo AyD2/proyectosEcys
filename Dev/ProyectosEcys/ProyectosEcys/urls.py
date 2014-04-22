@@ -4,6 +4,8 @@ from django.contrib import admin
 import sistema_pe.urls
 from dajaxice.core import dajaxice_autodiscover, dajaxice_config
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
+from django.conf import settings
 
 dajaxice_autodiscover()
 admin.autodiscover()
@@ -15,9 +17,8 @@ urlpatterns = patterns(
     url(r'^', include(sistema_pe.urls, namespace='sistema_pe')),
     url(r'^admin/', include(admin.site.urls)),
     url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
-    #url(r'^login/$', include('sistema_pe.urls', namespace='sistema_pe')),
-    #url(r'^usuario/', include('sistema_pe.urls', namespace='sistema_pe'))
-)
+    url(r'^uploads/$', 'upload')
+)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 urlpatterns += staticfiles_urlpatterns()

@@ -44,7 +44,7 @@ def login(request):
 
 
 
-def upload(request):
+'''def upload(request):
     response_data = {}
 
     if request.is_ajax():
@@ -69,7 +69,7 @@ def upload(request):
     response_data['status'] = "error"
     response_data['result'] = "We're sorry, but something went wrong. Please be sure that your file respects the upload conditions."
 
-    return HttpResponse(json.dumps(response_data), content_type='application/json')
+    return HttpResponse(json.dumps(response_data), content_type='application/json')'''
 
 
 def logout(request):

@@ -21,13 +21,23 @@ python ProyectosEcys/manage.py jenkins sistema_pe
 #env/bin/python manage.py jenkins
 
 
-echo "Copy Proyect to Dev Envioroment"
+echo "Copy Proyect to Dev Envioroment SERVER1"
 echo "Changing to www-data"
 scp -rv Conf www-data@web1:dev.proyectos-ecys.tk/
 scp -rv -rv ProyectosEcys www-data@web1:dev.proyectos-ecys.tk/
 echo "Moving Static Files"
 #sudo -u www-data rm -rf /var/www/dev.proyectos-ecys.tk/static
 scp -rv ProyectosEcys/sistema_pe/static www-data@web1:dev.proyectos-ecys.tk/
+
+
+echo "Copy Proyect to Dev Envioroment SERVER2"
+echo "Changing to www-data"
+scp -rv Conf www-data@web2:dev.proyectos-ecys.tk/
+scp -rv -rv ProyectosEcys www-data@web2:dev.proyectos-ecys.tk/
+echo "Moving Static Files"
+#sudo -u www-data rm -rf /var/www/dev.proyectos-ecys.tk/static
+scp -rv ProyectosEcys/sistema_pe/static www-data@web2:dev.proyectos-ecys.tk/
+
 echo "Syncing DB"
 python ProyectosEcys/manage.py syncdb
 echo "Starting Unit TEst"

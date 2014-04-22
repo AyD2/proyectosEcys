@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'ProyectosEcys.wsgi.application'
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_pylint',
         'django_jenkins.tasks.with_coverage',
-        'django_jenkins.tasks.django_tests',   # select one django or
+        #'django_jenkins.tasks.django_tests',   # select one django or
         #'django_jenkins.tasks.dir_tests'      # directory tests discovery
         'django_jenkins.tasks.run_pep8',
 #	'django_jenkins.tasks.run_flake8',
@@ -103,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':  'proyectos_ecys_db',
         'USER':  'tom',
-        'HOST':  'localhost',
+        'HOST':  'dbms',
         'PASSWORD': 'tom'
     }#,
     #'test_database': {

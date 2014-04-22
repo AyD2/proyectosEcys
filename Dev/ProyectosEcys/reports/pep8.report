@@ -1,0 +1,133 @@
+sistema_pe/ajax.py:21:1: E302 expected 2 blank lines, found 1
+sistema_pe/ajax.py:25:5: E265 block comment should start with '# '
+sistema_pe/ajax.py:28:1: E302 expected 2 blank lines, found 1
+sistema_pe/ajax.py:31:5: E265 block comment should start with '# '
+sistema_pe/ajax.py:40:1: E302 expected 2 blank lines, found 1
+sistema_pe/ajax.py:47:1: E302 expected 2 blank lines, found 1
+sistema_pe/ajax.py:64:44: E202 whitespace before '}'
+sistema_pe/ajax.py:66:1: E302 expected 2 blank lines, found 1
+sistema_pe/ajax.py:75:26: W291 trailing whitespace
+sistema_pe/ajax.py:82:44: E202 whitespace before '}'
+sistema_pe/ajax.py:84:1: E265 block comment should start with '# '
+sistema_pe/ajax.py:85:1: E302 expected 2 blank lines, found 1
+sistema_pe/ajax.py:86:5: E265 block comment should start with '# '
+sistema_pe/ajax.py:87:5: E265 block comment should start with '# '
+sistema_pe/ajax.py:88:18: W291 trailing whitespace
+sistema_pe/ajax.py:88:5: E265 block comment should start with '# '
+sistema_pe/ajax.py:89:5: E265 block comment should start with '# '
+sistema_pe/ajax.py:90:5: E265 block comment should start with '# '
+sistema_pe/ajax.py:91:5: E265 block comment should start with '# '
+sistema_pe/ajax.py:101:60: E231 missing whitespace after ':'
+sistema_pe/ajax.py:102:1: W391 blank line at end of file
+sistema_pe/bd_prueba.py:7:1: E302 expected 2 blank lines, found 0
+sistema_pe/bd_prueba.py:8:80: E501 line too long (114 > 79 characters)
+sistema_pe/bd_prueba.py:9:80: E501 line too long (115 > 79 characters)
+sistema_pe/bd_prueba.py:10:80: E501 line too long (115 > 79 characters)
+sistema_pe/bd_prueba.py:11:80: E501 line too long (115 > 79 characters)
+sistema_pe/bd_prueba.py:12:80: E501 line too long (114 > 79 characters)
+sistema_pe/bd_prueba.py:13:80: E501 line too long (115 > 79 characters)
+sistema_pe/bd_prueba.py:14:80: E501 line too long (115 > 79 characters)
+sistema_pe/bd_prueba.py:15:80: E501 line too long (115 > 79 characters)
+sistema_pe/bd_prueba.py:32:80: E501 line too long (84 > 79 characters)
+sistema_pe/bd_prueba.py:33:80: E501 line too long (85 > 79 characters)
+sistema_pe/bd_prueba.py:34:80: E501 line too long (88 > 79 characters)
+sistema_pe/bd_prueba.py:35:80: E501 line too long (90 > 79 characters)
+sistema_pe/bd_prueba.py:43:80: E501 line too long (89 > 79 characters)
+sistema_pe/bd_prueba.py:43:13: E128 continuation line under-indented for visual indent
+sistema_pe/bd_prueba.py:42:77: E203 whitespace before ','
+sistema_pe/bd_prueba.py:43:88: E202 whitespace before ')'
+sistema_pe/bd_prueba.py:45:80: E501 line too long (89 > 79 characters)
+sistema_pe/bd_prueba.py:45:13: E128 continuation line under-indented for visual indent
+sistema_pe/bd_prueba.py:44:78: E203 whitespace before ','
+sistema_pe/bd_prueba.py:45:88: E202 whitespace before ')'
+sistema_pe/bd_prueba.py:46:80: E501 line too long (80 > 79 characters)
+sistema_pe/bd_prueba.py:47:80: E501 line too long (90 > 79 characters)
+sistema_pe/bd_prueba.py:47:13: E128 continuation line under-indented for visual indent
+sistema_pe/bd_prueba.py:46:81: E203 whitespace before ','
+sistema_pe/bd_prueba.py:47:89: E202 whitespace before ')'
+sistema_pe/bd_prueba.py:48:80: E501 line too long (80 > 79 characters)
+sistema_pe/bd_prueba.py:49:80: E501 line too long (89 > 79 characters)
+sistema_pe/bd_prueba.py:49:13: E128 continuation line under-indented for visual indent
+sistema_pe/bd_prueba.py:48:81: E203 whitespace before ','
+sistema_pe/bd_prueba.py:49:88: E202 whitespace before ')'
+sistema_pe/bd_prueba.py:50:80: E501 line too long (81 > 79 characters)
+sistema_pe/bd_prueba.py:51:80: E501 line too long (90 > 79 characters)
+sistema_pe/bd_prueba.py:51:13: E128 continuation line under-indented for visual indent
+sistema_pe/bd_prueba.py:50:82: E203 whitespace before ','
+sistema_pe/bd_prueba.py:51:89: E202 whitespace before ')'
+sistema_pe/bd_prueba.py:52:80: E501 line too long (81 > 79 characters)
+sistema_pe/bd_prueba.py:53:80: E501 line too long (90 > 79 characters)
+sistema_pe/bd_prueba.py:53:13: E128 continuation line under-indented for visual indent
+sistema_pe/bd_prueba.py:52:82: E203 whitespace before ','
+sistema_pe/bd_prueba.py:53:89: E202 whitespace before ')'
+sistema_pe/bd_prueba.py:62:1: E265 block comment should start with '# '
+sistema_pe/bd_prueba.py:80:1: E265 block comment should start with '# '
+sistema_pe/bd_prueba.py:124:1: W391 blank line at end of file
+sistema_pe/forms.py:8:1: E302 expected 2 blank lines, found 1
+sistema_pe/forms.py:14:5: E301 expected 1 blank line, found 0
+sistema_pe/forms.py:20:80: E501 line too long (123 > 79 characters)
+sistema_pe/forms.py:20:49: E127 continuation line over-indented for visual indent
+sistema_pe/forms.py:19:100: E502 the backslash is redundant between brackets
+sistema_pe/login.py:5:1: E302 expected 2 blank lines, found 1
+sistema_pe/login.py:16:1: E302 expected 2 blank lines, found 1
+sistema_pe/login.py:29:1: W293 blank line contains whitespace
+sistema_pe/login.py:50:1: E302 expected 2 blank lines, found 1
+sistema_pe/login.py:58:1: E302 expected 2 blank lines, found 1
+sistema_pe/login.py:66:1: E302 expected 2 blank lines, found 1
+sistema_pe/login.py:71:9: E265 block comment should start with '# '
+sistema_pe/models.py:5:1: E302 expected 2 blank lines, found 1
+sistema_pe/models.py:12:1: E302 expected 2 blank lines, found 1
+sistema_pe/models.py:22:1: E302 expected 2 blank lines, found 1
+sistema_pe/models.py:29:1: E302 expected 2 blank lines, found 1
+sistema_pe/models.py:33:1: E302 expected 2 blank lines, found 1
+sistema_pe/print_log.py:4:29: E231 missing whitespace after ','
+sistema_pe/tests.py:7:1: E265 block comment should start with '# '
+sistema_pe/tests.py:16:80: E501 line too long (80 > 79 characters)
+sistema_pe/tests.py:23:37: E127 continuation line over-indented for visual indent
+sistema_pe/tests.py:22:65: E203 whitespace before ','
+sistema_pe/tests.py:22:60: E231 missing whitespace after ','
+sistema_pe/tests.py:25:38: E127 continuation line over-indented for visual indent
+sistema_pe/tests.py:24:67: E203 whitespace before ','
+sistema_pe/tests.py:37:1: W391 blank line at end of file
+sistema_pe/tests_acceptance.py:2:1: W293 blank line contains whitespace
+sistema_pe/tests_acceptance.py:6:1: W293 blank line contains whitespace
+sistema_pe/tests_acceptance.py:7:1: E302 expected 2 blank lines, found 1
+sistema_pe/tests_acceptance.py:8:1: W293 blank line contains whitespace
+sistema_pe/tests_acceptance.py:12:1: W293 blank line contains whitespace
+sistema_pe/tests_acceptance.py:14:28: W291 trailing whitespace
+sistema_pe/tests_acceptance.py:15:1: W293 blank line contains whitespace
+sistema_pe/tests_acceptance.py:21:9: E265 block comment should start with '# '
+sistema_pe/tests_acceptance.py:22:9: E265 block comment should start with '# '
+sistema_pe/tests_acceptance.py:25:9: E265 block comment should start with '# '
+sistema_pe/views.py:8:1: E302 expected 2 blank lines, found 1
+sistema_pe/views.py:28:21: E128 continuation line under-indented for visual indent
+sistema_pe/views.py:29:21: E128 continuation line under-indented for visual indent
+sistema_pe/views.py:30:21: E128 continuation line under-indented for visual indent
+sistema_pe/views.py:27:66: E203 whitespace before ','
+sistema_pe/views.py:28:40: E203 whitespace before ','
+sistema_pe/views.py:29:37: E203 whitespace before ','
+sistema_pe/views.py:28:33: E231 missing whitespace after ':'
+sistema_pe/views.py:41:21: E128 continuation line under-indented for visual indent
+sistema_pe/views.py:42:21: E128 continuation line under-indented for visual indent
+sistema_pe/views.py:43:21: E128 continuation line under-indented for visual indent
+sistema_pe/views.py:40:66: E203 whitespace before ','
+sistema_pe/views.py:41:40: E203 whitespace before ','
+sistema_pe/views.py:42:37: E203 whitespace before ','
+sistema_pe/views.py:41:33: E231 missing whitespace after ':'
+sistema_pe/views.py:67:80: E501 line too long (87 > 79 characters)
+sistema_pe/views.py:70:80: E501 line too long (132 > 79 characters)
+sistema_pe/views.py:72:80: E501 line too long (86 > 79 characters)
+sistema_pe/views.py:47:1: E303 too many blank lines (3)
+sistema_pe/views.py:83:1: E303 too many blank lines (3)
+sistema_pe/views.py:98:13: E128 continuation line under-indented for visual indent
+sistema_pe/views.py:98:22: E231 missing whitespace after ':'
+sistema_pe/views.py:98:65: E231 missing whitespace after ':'
+sistema_pe/views.py:99:25: E231 missing whitespace after ':'
+sistema_pe/views.py:99:32: E231 missing whitespace after ','
+sistema_pe/views.py:99:44: E231 missing whitespace after ':'
+sistema_pe/views.py:99:65: E231 missing whitespace after ':'
+sistema_pe/views.py:101:1: E302 expected 2 blank lines, found 1
+sistema_pe/views.py:104:1: E265 block comment should start with '# '
+sistema_pe/views.py:108:13: E128 continuation line under-indented for visual indent
+sistema_pe/views.py:108:22: E231 missing whitespace after ':'
+sistema_pe/views.py:110:1: W391 blank line at end of file

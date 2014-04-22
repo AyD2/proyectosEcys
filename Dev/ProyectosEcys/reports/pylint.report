@@ -1,0 +1,287 @@
+************* Module sistema_pe.print_log
+sistema_pe/print_log.py:4: [C0326(bad-whitespace), ] Exactly one space required after comma
+    log = open("log/app.log",'a')
+                            ^
+************* Module sistema_pe.ajax
+sistema_pe/ajax.py:56: [C0325(superfluous-parens), ] Unnecessary parens after 'if' keyword
+sistema_pe/ajax.py:64: [C0326(bad-whitespace), ] No space allowed before bracket
+    return simplejson.dumps({'texto': texto })
+                                            ^
+sistema_pe/ajax.py:74: [C0325(superfluous-parens), ] Unnecessary parens after 'if' keyword
+sistema_pe/ajax.py:75: [C0303(trailing-whitespace), ] Trailing whitespace
+sistema_pe/ajax.py:82: [C0326(bad-whitespace), ] No space allowed before bracket
+    return simplejson.dumps({'texto': texto })
+                                            ^
+sistema_pe/ajax.py:88: [C0303(trailing-whitespace), ] Trailing whitespace
+sistema_pe/ajax.py:17: [W0612(unused-variable), traer_repos] Unused variable 'asignaciones'
+sistema_pe/ajax.py:34: [C0103(invalid-name), asignar_curso] Invalid variable name "u"
+sistema_pe/ajax.py:35: [C0103(invalid-name), asignar_curso] Invalid variable name "c"
+sistema_pe/ajax.py:53: [C0103(invalid-name), cambiar_pass] Invalid variable name "u"
+sistema_pe/ajax.py:72: [C0103(invalid-name), cambiar_correo] Invalid variable name "u"
+sistema_pe/ajax.py:92: [C0103(invalid-name), listas_de_cursos] Invalid variable name "u"
+sistema_pe/ajax.py:5: [W0611(unused-import), ] Unused import Repositorio
+sistema_pe/ajax.py:7: [W0611(unused-import), ] Unused import os
+************* Module sistema_pe.bd_prueba
+sistema_pe/bd_prueba.py:43: [C0326(bad-whitespace), ] No space allowed before bracket
+            , fecha_creacion='2014-02-02', contenido="<h1>proyecto 1</h1>", activo=True )
+                                                                                        ^
+sistema_pe/bd_prueba.py:45: [C0326(bad-whitespace), ] No space allowed before bracket
+            , fecha_creacion='2014-02-02', contenido="<h1>proyecto 1</h1>", activo=True )
+                                                                                        ^
+sistema_pe/bd_prueba.py:47: [C0326(bad-whitespace), ] No space allowed before bracket
+            , fecha_creacion='2014-02-02', contenido="<h1>proyecto 1</h1>", activo=False )
+                                                                                         ^
+sistema_pe/bd_prueba.py:49: [C0326(bad-whitespace), ] No space allowed before bracket
+            , fecha_creacion='2014-03-03', contenido="<h1>proyecto 2</h1>", activo=True )
+                                                                                        ^
+sistema_pe/bd_prueba.py:51: [C0326(bad-whitespace), ] No space allowed before bracket
+            , fecha_creacion='2014-02-02', contenido="<h1>proyecto 1</h1>", activo=False )
+                                                                                         ^
+sistema_pe/bd_prueba.py:53: [C0326(bad-whitespace), ] No space allowed before bracket
+            , fecha_creacion='2014-03-03', contenido="<h1>proyecto 2</h1>", activo=False )
+                                                                                         ^
+sistema_pe/bd_prueba.py:7: [R0914(too-many-locals), llenar] Too many local variables (20/15)
+sistema_pe/bd_prueba.py:26: [C0103(invalid-name), llenar] Invalid variable name "s1"
+sistema_pe/bd_prueba.py:27: [C0103(invalid-name), llenar] Invalid variable name "s2"
+sistema_pe/bd_prueba.py:42: [C0103(invalid-name), llenar] Invalid variable name "pAydA"
+sistema_pe/bd_prueba.py:44: [C0103(invalid-name), llenar] Invalid variable name "pAydB"
+sistema_pe/bd_prueba.py:122: [W0105(pointless-string-statement), ] String statement has no effect
+sistema_pe/bd_prueba.py:3: [W0611(unused-import), ] Unused import Asignacion
+sistema_pe/bd_prueba.py:3: [W0611(unused-import), ] Unused import Repositorio
+************* Module sistema_pe.forms
+sistema_pe/forms.py:3: [E0611(no-name-in-module), ] No name 'Clase' in module 'sistema_pe'
+sistema_pe/forms.py:3: [E0611(no-name-in-module), ] No name 'Usuario' in module 'sistema_pe'
+sistema_pe/forms.py:3: [E0611(no-name-in-module), ] No name 'Proyecto' in module 'sistema_pe'
+sistema_pe/forms.py:15: [E1101(no-member), UploaderForm.clean_upload] Instance of 'UploaderForm' has no 'cleaned_data' member
+sistema_pe/forms.py:3: [W0611(unused-import), ] Unused import Usuario
+sistema_pe/forms.py:3: [W0611(unused-import), ] Unused import Clase
+sistema_pe/forms.py:3: [W0611(unused-import), ] Unused import Proyecto
+sistema_pe/forms.py:1: [W0611(unused-import), ] Unused import ModelForm
+************* Module sistema_pe.login
+sistema_pe/login.py:29: [C0303(trailing-whitespace), ] Trailing whitespace
+sistema_pe/login.py:8: [C0103(invalid-name), login] Invalid variable name "us"
+sistema_pe/login.py:18: [C0103(invalid-name), login_tutor] Invalid variable name "us"
+sistema_pe/login.py:19: [C0103(invalid-name), login_tutor] Invalid variable name "tu"
+sistema_pe/login.py:34: [C0103(invalid-name), obtener_usuario] Invalid variable name "us"
+sistema_pe/login.py:45: [C0103(invalid-name), obtener_repositorios] Invalid variable name "rp"
+sistema_pe/login.py:53: [C0103(invalid-name), obtener_clases] Invalid variable name "c"
+sistema_pe/login.py:58: [E0102(function-redefined), obtener_usuario] function already defined line 31
+sistema_pe/login.py:61: [C0103(invalid-name), obtener_usuario] Invalid variable name "u"
+sistema_pe/login.py:69: [C0103(invalid-name), obtener_mis_clases] Invalid variable name "u"
+************* Module sistema_pe.tests_acceptance
+sistema_pe/tests_acceptance.py:24: [W0511(fixme), ] TODO: use the admin site to create a Poll
+sistema_pe/tests_acceptance.py:2: [C0303(trailing-whitespace), ] Trailing whitespace
+sistema_pe/tests_acceptance.py:6: [C0303(trailing-whitespace), ] Trailing whitespace
+sistema_pe/tests_acceptance.py:8: [C0303(trailing-whitespace), ] Trailing whitespace
+sistema_pe/tests_acceptance.py:12: [C0303(trailing-whitespace), ] Trailing whitespace
+sistema_pe/tests_acceptance.py:14: [C0303(trailing-whitespace), ] Trailing whitespace
+sistema_pe/tests_acceptance.py:15: [C0303(trailing-whitespace), ] Trailing whitespace
+sistema_pe/tests_acceptance.py:7: [R0904(too-many-public-methods), PollsTest] Too many public methods (67/50)
+sistema_pe/tests_acceptance.py:1: [W0611(unused-import), ] Unused import TestCase
+************* Module sistema_pe.tests
+sistema_pe/tests.py:22: [C0326(bad-whitespace), ] Exactly one space required after comma
+        self.assertEquals(login.login('200819222', 'clave'),True
+                                                           ^
+sistema_pe/tests.py:13: [C0103(invalid-name), Unittest_Login.preparar] Invalid variable name "c"
+sistema_pe/tests.py:14: [C0103(invalid-name), Unittest_Login.preparar] Invalid variable name "c2"
+sistema_pe/tests.py:20: [C0103(invalid-name), Unittest_Login.test_login_login] Invalid variable name "us"
+sistema_pe/tests.py:21: [W0612(unused-variable), Unittest_Login.test_login_login] Unused variable 'us2'
+sistema_pe/tests.py:20: [W0612(unused-variable), Unittest_Login.test_login_login] Unused variable 'us'
+sistema_pe/tests.py:29: [C0103(invalid-name), Unittest_Login.test_login_db] Invalid variable name "usFalso"
+sistema_pe/tests.py:30: [C0103(invalid-name), Unittest_Login.test_login_db] Invalid variable name "usVerdadero"
+sistema_pe/tests.py:10: [R0904(too-many-public-methods), Unittest_Login] Too many public methods (68/50)
+************* Module sistema_pe.views
+sistema_pe/views.py:99: [C0326(bad-whitespace), ] Exactly one space required after comma
+                'clases':clases,'misclases':misclases, 'usuario':usuario})
+                               ^
+sistema_pe/views.py:15: [W0621(redefined-outer-name), login] Redefining name 'tutor' from outer scope (line 101)
+sistema_pe/views.py:72: [W0105(pointless-string-statement), ] String statement has no effect
+sistema_pe/views.py:106: [W0612(unused-variable), tutor] Unused variable 'usuario'
+sistema_pe/views.py:4: [W0611(unused-import), ] Unused import HttpResponse
+
+
+Report
+======
+318 statements analysed.
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |12     |12         |=          |41.67       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |9      |9          |=          |11.11       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|method   |7      |7          |=          |28.57       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|function |21     |21         |=          |66.67       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |44     |44       |=          |
++-----------+-------+---------+-----------+
+|refactor   |3      |3        |=          |
++-----------+-------+---------+-----------+
+|warning    |18     |18       |=          |
++-----------+-------+---------+-----------+
+|error      |5      |5        |=          |
++-----------+-------+---------+-----------+
+
+
+
+% errors / warnings by module
+-----------------------------
+
++----------------------------+------+--------+---------+-----------+
+|module                      |error |warning |refactor |convention |
++============================+======+========+=========+===========+
+|sistema_pe.forms            |80.00 |22.22   |0.00     |0.00       |
++----------------------------+------+--------+---------+-----------+
+|sistema_pe.login            |20.00 |0.00    |0.00     |20.45      |
++----------------------------+------+--------+---------+-----------+
+|sistema_pe.views            |0.00  |22.22   |0.00     |2.27       |
++----------------------------+------+--------+---------+-----------+
+|sistema_pe.bd_prueba        |0.00  |16.67   |33.33    |22.73      |
++----------------------------+------+--------+---------+-----------+
+|sistema_pe.ajax             |0.00  |16.67   |0.00     |25.00      |
++----------------------------+------+--------+---------+-----------+
+|sistema_pe.tests_acceptance |0.00  |11.11   |33.33    |13.64      |
++----------------------------+------+--------+---------+-----------+
+|sistema_pe.tests            |0.00  |11.11   |33.33    |13.64      |
++----------------------------+------+--------+---------+-----------+
+
+
+
+Messages
+--------
+
++---------------------------+------------+
+|message id                 |occurrences |
++===========================+============+
+|invalid-name               |22          |
++---------------------------+------------+
+|bad-whitespace             |11          |
++---------------------------+------------+
+|unused-import              |10          |
++---------------------------+------------+
+|trailing-whitespace        |9           |
++---------------------------+------------+
+|unused-variable            |4           |
++---------------------------+------------+
+|no-name-in-module          |3           |
++---------------------------+------------+
+|too-many-public-methods    |2           |
++---------------------------+------------+
+|superfluous-parens         |2           |
++---------------------------+------------+
+|pointless-string-statement |2           |
++---------------------------+------------+
+|too-many-locals            |1           |
++---------------------------+------------+
+|redefined-outer-name       |1           |
++---------------------------+------------+
+|no-member                  |1           |
++---------------------------+------------+
+|function-redefined         |1           |
++---------------------------+------------+
+|fixme                      |1           |
++---------------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at 7.17/10 (previous run: 7.17/10, +0.00)
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |424    |78.23 |424      |=          |
++----------+-------+------+---------+-----------+
+|docstring |35     |6.46  |35       |=          |
++----------+-------+------+---------+-----------+
+|comment   |29     |5.35  |29       |=          |
++----------+-------+------+---------+-----------+
+|empty     |54     |9.96  |54       |=          |
++----------+-------+------+---------+-----------+
+
+
+
+External dependencies
+---------------------
+::
+
+    dajaxice 
+      \-core 
+      | \-dajaxice_autodiscover (sistema_pe.urls)
+      | \-dajaxice_config (sistema_pe.urls)
+      \-decorators 
+        \-dajaxice_register (sistema_pe.ajax)
+    django 
+      \-conf 
+      | \-settings (sistema_pe.forms,sistema_pe.urls)
+      | \-urls 
+      |   \-include (sistema_pe.urls)
+      |   \-patterns (sistema_pe.urls)
+      |   \-static 
+      |   | \-static (sistema_pe.urls)
+      |   \-url (sistema_pe.urls)
+      \-contrib 
+      | \-admin (sistema_pe.admin)
+      | \-staticfiles 
+      |   \-urls 
+      |     \-staticfiles_urlpatterns (sistema_pe.urls)
+      \-core 
+      | \-serializers (sistema_pe.ajax)
+      \-db 
+      | \-models (sistema_pe.models)
+      \-forms (sistema_pe.forms)
+      | \-ModelForm (sistema_pe.forms)
+      \-http 
+      | \-HttpResponse (sistema_pe.views)
+      | \-HttpResponseRedirect (sistema_pe.views)
+      \-shortcuts 
+      | \-render (sistema_pe.views)
+      \-template 
+      | \-defaultfilters 
+      |   \-filesizeformat (sistema_pe.forms)
+      \-test 
+      | \-LiveServerTestCase (sistema_pe.tests_acceptance)
+      | \-TestCase (sistema_pe.tests_acceptance,sistema_pe.tests)
+      \-utils 
+        \-simplejson (sistema_pe.ajax)
+        \-translation 
+          \-ugettext_lazy (sistema_pe.forms)
+    hashlib (sistema_pe.ajax,sistema_pe.bd_prueba)
+      \-sha512 (sistema_pe.tests,sistema_pe.login)
+    os (sistema_pe.ajax)
+    selenium 
+      \-webdriver (sistema_pe.tests_acceptance)
+
+
+

@@ -29,21 +29,9 @@ class Unittest_Login(TestCase):
         usFalso = login.obtener_usuario('nombreFalso')
         usVerdadero = login.obtener_usuario('200819222')
         self.assertIsNone(usFalso)
-        self.assertIsNotNone(usVerdadero)  
-
-from django.test import LiveServerTestCase
-from selenium import webdriver
+        self.assertIsNotNone(usVerdadero)
 
 
-class Selenium_test(LiveServerTestCase):
-
-    def setUp(self):
-        self.browser = webdriver.Firefox()
-        self.browser.implicity_wait(3)
-
-    def tearDown(self):
-        self.browser.quit()
 
 
-    def pueden_entrar_a_admin_site(self):
-        self.fail('fin de prueba')
+

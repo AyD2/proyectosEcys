@@ -102,7 +102,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':  'proyectos_ecys_db',
         'USER':  'tom',
-        'HOST':  'localhost',
+        'HOST':  'dbms',
         'PASSWORD': 'tom'
     }#,
     #'test_database': {

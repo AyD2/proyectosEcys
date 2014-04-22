@@ -197,6 +197,29 @@ body{
 }
 /**************************CAMBIAR********************************************/
 
+/********************************FORM*****************************************/
+#nombrenp {
+   top: 35px; 
+}
+#descripcionnp {
+    top: 75px;
+    width: 300px;
+    height: 100px;
+    line-height: 20px;
+}
+#btn_proyectonp {
+    top: 215px;
+    right: 0px;
+}
+#filenp {
+    position: absolute;
+    top: 185px;
+}
+
+/********************************FORM*****************************************/
+
+
+
 /************************** aqui terminan los paneles *******************************/
 
 
@@ -217,7 +240,7 @@ body{
     left: 0px;
     width: 100%;
     height: 100px;
-    background-color: #DF6A38;
+    background-color: #6a82b7;
 }
 
 #encabezado {

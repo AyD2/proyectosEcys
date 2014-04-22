@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import dirname, join
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 #toma el directorio de configuracion para el deploy en diferentes ambientes.
@@ -42,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_jenkins',
     'sistema_pe',
+    'dajaxice'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,6 +66,18 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request"
 )
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.eggs.Loader',
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'dajaxice.finders.DajaxiceFinder',
+)
+
 ROOT_URLCONF = 'ProyectosEcys.urls'
 
 WSGI_APPLICATION = 'ProyectosEcys.wsgi.application'
@@ -72,7 +86,7 @@ WSGI_APPLICATION = 'ProyectosEcys.wsgi.application'
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_pylint',
         'django_jenkins.tasks.with_coverage',
-        'django_jenkins.tasks.django_tests',   # select one django or
+        #'django_jenkins.tasks.django_tests',   # select one django or
         #'django_jenkins.tasks.dir_tests'      # directory tests discovery
         'django_jenkins.tasks.run_pep8',
 #	'django_jenkins.tasks.run_flake8',
@@ -81,7 +95,7 @@ JENKINS_TASKS = (
 #        'django_jenkins.tasks.run_csslint',
 #        'django_jenkins.tasks.run_sloccount',
 #        'django_jenkins.tasks.lettuce_tests',
-) 
+)
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 DATABASES = {
@@ -89,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':  'proyectos_ecys_db',
         'USER':  'tom',
-        'HOST':  'localhost',
+        'HOST':  'dbms',
         'PASSWORD': 'tom'
     }#,
     #'test_database': {
@@ -123,3 +137,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+content_types=['application/pdf','image/jpeg', 'image/png']

@@ -1,0 +1,49 @@
+#!/bin/bash
+#
+echo "Start Build Script  $(date)"
+#
+script="$(readlink -f ${BASH_SOURCE[0]})"
+base="$(dirname $script)"
+echo "Script Name : $script"
+echo "Current working dir : $PWD"
+echo "Script location path (dir) : $base"
+#
+echo "Changing to Django Directory"
+cd "$base/../Dev"
+#
+echo "Creating Virtual Enviroment"
+#virtualenv env --python=python
+#env/bin/pip install -r requeriments.pip
+#env/bin/python manage.py jenkins
+echo "Star Jenkins+Django Test"
+python ProyectosEcys/manage.py jenkins sistema_pe
+
+#env/bin/python manage.py jenkins
+
+
+echo "Copy Proyect to Dev Envioroment SERVER1"
+echo "Changing to www-data"
+scp -rv Conf www-data@web1:dev.proyectos-ecys.tk/
+scp -rv -rv ProyectosEcys www-data@web1:dev.proyectos-ecys.tk/
+echo "Moving Static Files"
+#sudo -u www-data rm -rf /var/www/dev.proyectos-ecys.tk/static
+scp -rv ProyectosEcys/sistema_pe/static www-data@web1:dev.proyectos-ecys.tk/
+
+
+echo "Copy Proyect to Dev Envioroment SERVER2"
+echo "Changing to www-data"
+scp -rv Conf www-data@web2:dev.proyectos-ecys.tk/
+scp -rv -rv ProyectosEcys www-data@web2:dev.proyectos-ecys.tk/
+echo "Moving Static Files"
+#sudo -u www-data rm -rf /var/www/dev.proyectos-ecys.tk/static
+scp -rv ProyectosEcys/sistema_pe/static www-data@web2:dev.proyectos-ecys.tk/
+
+echo "Syncing DB"
+python ProyectosEcys/manage.py syncdb
+echo "Starting Unit TEst"
+
+#echo "Changing Onwer to www-data"
+#chmod -R 775 /var/www/dev.proyectos-ecys.tk
+#chown -R www-data /var/www/dev.proyectos-ecys.tk
+
+echo "End Build Script $(date)"

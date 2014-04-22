@@ -9,6 +9,11 @@ class Usuario(models.Model):
     tipo_usuario = models.BooleanField()
     correo = models.CharField(max_length=50)
 
+class Asignacion(models.Model):
+    id_carnet = models.ForeignKey('Usuario')
+    id_Clase = models.ForeignKey('Clase')
+
+
 class Repositorio(models.Model):
     proyecto = models.ForeignKey('Proyecto')
     usuario = models.ForeignKey('Usuario')
@@ -19,10 +24,10 @@ class Clase(models.Model):
     seccion = models.CharField(max_length=2)
     semestre = models.ForeignKey('Semestre')
     tutor = models.ForeignKey('Usuario')
+    activa = models.BooleanField()
 
 class Semestre(models.Model):
-    ident = models.IntegerField(primary_key=True)
-    ciclo = models.IntegerField()
+    year = models.IntegerField()
     etapa = models.IntegerField()
 
 class Proyecto(models.Model):
@@ -31,3 +36,5 @@ class Proyecto(models.Model):
     fecha_entrega = models.DateTimeField()
     fecha_creacion = models.DateTimeField(auto_now=True)
     contenido = models.CharField(max_length=50)
+    enunciado = models.FileField(upload_to='uploads/%Y/%m/%d')
+    activo = models.BooleanField()

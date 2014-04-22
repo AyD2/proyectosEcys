@@ -2,23 +2,101 @@
 <html lang="en">
 <head>
     {% load staticfiles %}
+    {% load dajaxice_templatetags %}
     <meta charset="utf-8">
     <title>proyectos ecys</title>
     <link rel="stylesheet" href="{% static 'sistema_pe/usuario.css' %}">
+    {% dajaxice_js_import %}
+    <script type="text/javascript" src="{% static 'sistema_pe/scripts/jquery-2.1.0.min.js' %}"> </script>
+    <script type="text/javascript" src="{% static 'sistema_pe/scripts/usuario.js' %}" > </script>
 </head>
 <body>
     {% if request.session.logueado %}
-        <header>
-            <a href="/logout/">salir</a>
-            <div id="herramientas">
-                <div class="barMenu" id="menuclases">
-                </div><!--
-                --><div class="barMenu" id="menuconf">
+        <div id="contenido">
+            <div id="pcambiarpass" class="cont poculto">
+                <div class="ptitulo"><h1>&nbsp;&nbsp;Cambio de Contrasenia</h1> </div>
+                    <div class="anuncio"></div>
+                <div class="contCambio">
+                    <div class="formCambio">
+                        <div id="nuevap" class="txtfield" contenteditable="true" data-ph="Contrasenia nueva"></div>
+                        <div id="rnuevap" class="txtfield" contenteditable="true" data-ph="Repita su Contrasenia"></div>
+                        <div id="passp" class="txtfield" contenteditable="true" data-ph="Contrasenia actual"></div>
+                        <div id="btn_cambiarp" class="btnCambio">Cambiar</div> 
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="pcambiarcorreo" class="cont">
+                <div class="ptitulo"><h1>&nbsp;&nbsp;Cambio de Correo</h1></div>
+                    <div class="anuncio"></div>
+                <div class="contCambio">
+                    <p>Actualmente usted utiliza el correo: {{usuario.correo}}</p>
+                    <div class="formCambio">
+                        <div id="correo_nuevo" class="txtfield" contenteditable="true" data-ph="Correo nuevo"></div>
+                        <div id="pass" class="txtfield" contenteditable="true" data-ph="Contrasenia"></div>
+                        <div id="btn_cambiarc" class="btnCambio">Cambiar</div> 
+                    </div>
                 </div>
             </div>
-        </header>
-        <div id="contenido">
+
+            <div id="prepo" class="cont poculto">
+                <div class="ptitulo"><h1>&nbsp;&nbsp;Realizar un Commit</h1></div>
+            </div>
+            <div id="pcommit" class="cont poculto">
+                <div class="ptitulo"><h1>&nbsp;&nbsp;Realizar un Commit</h1></div>
+            
+            </div>
+
+            <div id="pasignar" class="cont poculto">
+                <div class="ptitulo"><h1>&nbsp;&nbsp;Asignacion de Cursos</h1></div>
+            </div>
+
+            <div id="pcursos" class="cont poculto">
+               <div class="ptitulo"><h1>Mis Cursos</h1></div>
+            </div>
+            <div id="pdeasig" class="cont poculto"></div>
         </div>
+        <div id="lateral">
+            <div id="titulo" class="en_encabezado">
+                <div id="encabezado">
+                    {{ carnet }}
+                </div>
+            </div>
+            <div id="lista_menus">
+                <div id="list_configuracion">
+                    <div class="div_list" class="collapsable">
+                        Configuracion 
+                    </div>
+                    <div class="item_list">
+                        Cambiar Contraseña
+                    </div>
+                    <div class="item_list">
+                        Cambiar Correo
+                    </div>
+                </div>
+                <div id="list_workspace" class="collapsable">
+                    <div class="div_list">
+                        Workspace
+                    </div>
+                    {% for repo in repos %}
+                    <div class="item_list">
+                        {{ repo.direccion }}
+                    </div>
+                    {% endfor %}
+                    <div class="item_list">Commit</div>
+                </div>
+                <div id="list_curso" class="collapsable">
+                    <div class="div_list">
+                        Curso
+                    </div>
+                    <div class="item_list">Gestion de cursos</div>
+                    <div class="item_list">Mis cursos</div>
+                    <div class="item_list">Desasignar un curso</div>
+                </div>
+            </div>
+        </div>
+
     {% else %}
         <h3>no tiene los permisos suficientes par estar aqui<h3>
     {% endif %}

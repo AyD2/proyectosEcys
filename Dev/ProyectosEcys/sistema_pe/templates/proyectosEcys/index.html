@@ -19,21 +19,21 @@
                 <div class="logoIzquierda" >
                     <img class="logLateral" src="{% static 'sistema_pe/Images/Ecys.png'%}" />
                     <div class="mensaje">
-                        <h2>Toma el control de tus proyectos!<h2>
+                        <h2>Toma el control de tus proyectos! V2<h2>
                     </div>
                 </div><!--
 
                 --><div class="logo">
                     <img class="logCentral" src="{% static 'sistema_pe/Images/pecys4.png'%}" />
                     <div class="mensaje">
-                        <h2>Toma el control de tus proyectos!<h2>
+                        <h2>Toma el control de tus proyectos! V2<h2>
                     </div>
                 </div><!--
 
                 --><div class="logoDerecha">
                     <img class="logLateral" src="{% static 'sistema_pe/Images/git.png'%}" />
                     <div class="mensaje">
-                        <h2>Gestiona y ordena tus proyectos!</h2>
+                        <h2>Gestiona y ordena tus proyectos! V2</h2>
                     </div>
                 </div>
             </div>
@@ -43,6 +43,7 @@
                     {% csrf_token %}
                     <input class="txtInput" type="text" name="usrCarnet" placeholder="Usuario">
                     <input class="txtInput" type="text" name="usrClave" placeholder="Contrase;a">
+                    <input type="checkbox" name="tutor">
                     <div class="btnSubmit" onClick="document.forms['frmLogin'].submit()">Entrar</div>
                 </form>
             </div>

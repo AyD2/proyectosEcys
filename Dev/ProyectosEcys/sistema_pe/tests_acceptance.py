@@ -1,4 +1,4 @@
-'''from django.test import TestCase
+from django.test import TestCase
   
 # Create your tests here.
 from django.test import LiveServerTestCase
@@ -17,4 +17,4 @@ class PollsTest(LiveServerTestCase):
         self.browser.get(self.live_server_url + '/')
         body = self.browser.find_element_by_tag_name('body')
         self.assertEquals('AboutTerminosAyuda' == body.text, True, 'algo')
-        self.fail('finish this test')'''
+        #self.fail('finish this test')

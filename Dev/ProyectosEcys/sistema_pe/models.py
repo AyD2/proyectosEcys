@@ -17,6 +17,7 @@ class Asignacion(models.Model):
 class Repositorio(models.Model):
     proyecto = models.ForeignKey('Proyecto')
     usuario = models.ForeignKey('Usuario')
+#nombre = models.CharField(max_length=5)
     direccion = models.CharField(max_length=50)
 
 class Clase(models.Model):
@@ -38,3 +39,21 @@ class Proyecto(models.Model):
     contenido = models.CharField(max_length=50)
     enunciado = models.FileField(upload_to='uploads/%Y/%m/%d')
     activo = models.BooleanField()
+
+''' 
+class Grupo(moedls.Model):
+    clase = models.ForeignKey('Clase')
+    identificador = models.CharField(max_length=2)
+    
+
+
+
+
+
+
+
+
+
+
+
+

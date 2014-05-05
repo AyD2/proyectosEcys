@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from sistema_pe import login as log
 from django.http import HttpResponseRedirect, HttpResponse
+import os
 
 # Create your views here.
 
@@ -41,6 +42,9 @@ def login(request):
                     , {'usuario':carnet
                     , 'clave': clave
                     , 'aceptado': True})
+
+
+
 
 
 

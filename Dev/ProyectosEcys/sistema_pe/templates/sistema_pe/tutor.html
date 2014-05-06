@@ -24,12 +24,39 @@
                         </select>
                         <div id="nombrenp" class="txtfield" contenteditable="true" data-ph="nombre proyecto"></div>
                         <div id="descripcionnp" class="txtfield" contenteditable="true" data-ph="Descripcion"></div>
-                        <input id="filenp" class="input-file" name="upload" type="file">
-                        <div id="btn_proyectonp" class="btnCambio">Crear</div> 
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<form id="uploadForm" action="/upload/" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<input id="fileInput" class="input-file" name="upload" type="file">
+				<span class="upload-message"></span>
+				<input type="submit" value="Upload" />
+			</form>
+	                <div id="btn_proyectonp" class="btnCambio">Crear</div>
+
                     </div>
                 </div>
             </div>
+	    <script>
 
+		var message = '';
+		var options = {
+			url: '/upload/',
+			error: function(response) {
+				message = '<span class="error">We\'re sorry, but something went wrong. Retry.</span>';
+				$('.upload-message').html(message);
+				$('fileInput').val('');
+			},
+			success: function(response) {
+				message = '<span class="' + response.status + '">' + response.result + '</span> ';
+				message = ( response.status == 'success' ) ? message + response.fileLink : message;
+				$('.upload-message').html(message);
+				$('fileInput').val('');
+			}
+		};
+		$('#uploadForm').ajaxSubmit(options);
+
+            </script>
+	    
             <div id="pmisproyectos" class="cont poculto">
                 <div class="ptitulo"><h1>&nbsp;&nbsp;Mis proyectos</h1></div>
             </div>

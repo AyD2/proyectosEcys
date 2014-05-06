@@ -17,7 +17,7 @@ urlpatterns = patterns(
     url(r'^tutor/$', sistema_pe.views.tutor, name='tutor'),
     url(r'^logout/$', sistema_pe.views.logout, name='logout'),
     url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
-    url(r'^uploads/$', 'upload'),
+    url(r'^upload/$', 'sistema_pe.views.upload'),
 )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()

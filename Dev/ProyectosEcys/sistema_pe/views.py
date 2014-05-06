@@ -2,6 +2,9 @@
 from django.shortcuts import render
 from sistema_pe import login as log
 from django.http import HttpResponseRedirect, HttpResponse
+from forms import UploaderForm
+from models import Proyecto
+import json
 
 # Create your views here.
 
@@ -44,32 +47,28 @@ def login(request):
 
 
 
-'''def upload(request):
+def upload(request):
     response_data = {}
 
-    if request.is_ajax():
+    if request.method == 'POST':
         form = UploaderForm(request.POST, request.FILES)
 
     if form.is_valid():
-        proyecto = Proyecto(
-            clase = Clase.objects.get(),
-            creador = Usuario.objects.get(),
-            fecha_entrega = request.
-            upload=request.FILES['upload'],
-        )
-        upload.name = request.FILES['upload'].name
-        upload.save()
+        proyecto = Proyecto()
+        proyecto.enunciado = request.FILES['upload']
+        proyecto.name = request.FILES['upload'].name
+        proyecto.save()
 
         response_data['status'] = "success"
         response_data['result'] = "Your file has been uploaded:"
-        response_data['fileLink'] = "/%s" % upload.upload
+        response_data['fileLink'] = "/%s" % proyecto.enunciado
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
+    else:
+    	response_data['status'] = "error"
+	response_data['result'] = "We're sorry, but something went wrong. Please be sure that your file respects the upload conditions."
 
-    response_data['status'] = "error"
-    response_data['result'] = "We're sorry, but something went wrong. Please be sure that your file respects the upload conditions."
-
-    return HttpResponse(json.dumps(response_data), content_type='application/json')'''
+	return HttpResponse(json.dumps(response_data), content_type='application/json')
 
 
 def logout(request):

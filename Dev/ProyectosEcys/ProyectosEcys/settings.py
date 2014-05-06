@@ -139,4 +139,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-content_types=['application/pdf','image/jpeg', 'image/png']
+MAX_UPLOAD_SIZE = 20971520 #20 MB
+CONTENT_TYPES =['application/pdf','image/jpeg', 'image/png']

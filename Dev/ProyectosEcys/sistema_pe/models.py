@@ -36,5 +36,5 @@ class Proyecto(models.Model):
     fecha_entrega = models.DateTimeField()
     fecha_creacion = models.DateTimeField(auto_now=True)
     contenido = models.CharField(max_length=50)
-    enunciado = models.FileField(upload_to='uploads/%Y/%m/%d')
+    enunciado = models.FileField(upload_to='uploads/%Y/%m')
     activo = models.BooleanField()
